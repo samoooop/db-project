@@ -345,28 +345,42 @@ desired effect
                     </div>
                     <!-- ./col -->
                 </div>
-                <div class="col-xs-6">
-                    <div class="box box-solid bg-teal-gradient">
-                        <div class="box-header">
-                            <i class="fa fa-th"></i>
+                <div class=row>
+                    <div class="col-xs-6">
+                        <div class="box box-solid">
+                            <div class="box-header">
+                                <i class="fa fa-th"></i>
 
-                            <h3 class="box-title">แบ่งตามชั้นปี</h3>
+                                <h3 class="box-title">จำนวนนิสิตแบ่งตามชั้นปี</h3>
 
-                            <div class="box-tools pull-right">
-                                <button type="button" class="btn bg-teal btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                                <button type="button" class="btn bg-teal btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                                <div class="box-tools pull-right">
+                                    <button type="button" class="btn btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                    <button type="button" class="btn bg-red btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                                </div>
+                            </div>
+                            <div class="box-body border-radius-none">
+                                <canvas id="totalChart" width="400" height="400"></canvas>
+
                             </div>
                         </div>
-                        <div class="box-body border-radius-none">
-                            <canvas id="myChart" width="400" height="400"></canvas>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="box box-solid">
+                            <div class="box-header">
+                                <i class="fa fa-th"></i>
 
-                        </div>
-                        <!-- /.box-body -->
-                        <div class="box-footer no-border">
+                                <h3 class="box-title">เกรดเฉลี่ยนของนิสิตแบ่งตามชั้นปี</h3>
 
-                            <!-- /.row -->
+                                <div class="box-tools pull-right">
+                                    <button type="button" class="btn btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                    <button type="button" class="btn bg-red btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                                </div>
+                            </div>
+                            <div class="box-body border-radius-none">
+                                <canvas id="gradeChart" width="400" height="400"></canvas>
+
+                            </div>
                         </div>
-                        <!-- /.box-footer -->
                     </div>
                 </div>
             </section>
@@ -472,49 +486,8 @@ desired effect
     <!-- AdminLTE App -->
     <script src="dist/js/app.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
-    <script>
-        var barChartData = {
-            labels: ["ปี1", "ปี2", "ปี3", "ปี4", "Other"],
-            datasets: [{
-                label: 'ปกติ',
-                backgroundColor: "rgb(75, 192, 192)",
-                data: [
-                    1, 2, 3, 4, 5
-                ]
-            }, {
-                label: 'under probation',
-                backgroundColor: "rgb(255, 99, 132)",
-                data: [
-                    1, 2, 3, 4, 5
-                ]
-            }]
-
-        };
-        var ctx = document.getElementById("myChart");
-        var myChart = new Chart(ctx, {
-            type: 'bar',
-            data: barChartData,
-            options: {
-                title: {
-                    display: true,
-                    text: ""
-                },
-                tooltips: {
-                    mode: 'index',
-                    intersect: false
-                },
-                responsive: true,
-                scales: {
-                    xAxes: [{
-                        stacked: true,
-                    }],
-                    yAxes: [{
-                        stacked: true
-                    }]
-                }
-            }
-        });
-    </script>
+    <script src="js/totalGraph.js"></script>
+    <script src="js/gradeChart.js"></script>
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
