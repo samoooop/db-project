@@ -62,9 +62,9 @@ desired effect
             <!-- Logo -->
             <a href="index2.html" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><b>A</b>LT</span>
+                <span class="logo-mini"><b>DB</b>ez</span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Admin</b>LTE</span>
+                <span class="logo-lg"><b>DB</b>project</span>
             </a>
 
             <!-- Header Navbar -->
@@ -288,10 +288,10 @@ desired effect
                     ภาพรวม
                     <small></small>
                 </h1>
-                <ol class="breadcrumb">
+                <!--<ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
                     <li class="active">Here</li>
-                </ol>
+                </ol>-->
             </section>
 
             <!-- Main content -->
@@ -421,6 +421,27 @@ desired effect
                         </div>
                     </div>
                 </div>
+                <div class=row>
+                    <div class="col-xs-6">
+                        <div class="box box-solid">
+                            <div class="box-header">
+                                <i class="fa fa-th"></i>
+
+                                <h3 class="box-title">จำนวนรางวัลและผลงานของนิสิตแบ่งตามชั้นปี</h3>
+
+                                <div class="box-tools pull-right">
+                                    <button type="button" class="btn btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                    <button type="button" class="btn bg-red btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                                </div>
+                            </div>
+                            <div class="box-body border-radius-none">
+                                <canvas id="achievementChart" width="400" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                    </div>
+                </div>
             </section>
             <!-- /.content -->
         </div>
@@ -523,6 +544,8 @@ desired effect
     <script src="js/totalGraph.js"></script>
     <script src="js/gradeChart.js"></script>
     <script src="js/overviewChart.js"></script>
+    <script src="js/achievementChart.js"></script>
+
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
