@@ -299,7 +299,7 @@ desired effect
 
                 <!-- Your Page Content Here -->
                 <div class="row">
-                    <div class="col-lg-4 col-xs-6">
+                    <div class="col-lg-3 col-xs-6">
                         <!-- small box -->
                         <div class="small-box bg-aqua">
                             <div class="inner">
@@ -312,9 +312,6 @@ desired effect
                             </div>
                             <a href="#" class="small-box-footer">รายละเอียด<i class="fa fa-arrow-circle-right"></i></a>
                         </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-4 col-xs-6">
                         <!-- small box -->
                         <div class="small-box bg-green">
                             <div class="inner">
@@ -327,9 +324,6 @@ desired effect
                             </div>
                             <a href="#" class="small-box-footer">รายละเอียด<i class="fa fa-arrow-circle-right"></i></a>
                         </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-4 col-xs-6">
                         <!-- small box -->
                         <div class="small-box bg-red">
                             <div class="inner">
@@ -343,7 +337,51 @@ desired effect
                             <a href="#" class="small-box-footer">รายละเอียด<i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
+                    <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box bg-orange">
+                            <div class="inner">
+                                <h3>2</h3>
+
+                                <p>On Leave</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion-android-hand"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">รายละเอียด<i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                        <!-- small box -->
+                        <div class="small-box bg-yellow">
+                            <div class="inner">
+                                <h3>1</h3>
+
+                                <p>Exchage</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion-android-plane"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">รายละเอียด<i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
                     <!-- ./col -->
+                    <div class="col-lg-6 col-xs-6">
+                        <div class="box box-solid">
+                            <div class="box-header">
+                                <i class="fa fa-th"></i>
+
+                                <h3 class="box-title">จำนวนนิสิตแบ่งตามสถานะ</h3>
+
+                                <div class="box-tools pull-right">
+                                    <button type="button" class="btn btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                    <button type="button" class="btn bg-red btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                                </div>
+                            </div>
+                            <div class="box-body border-radius-none">
+                                <canvas id="overviewChart" width="400" height="275"></canvas>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class=row>
                     <div class="col-xs-6">
@@ -359,7 +397,7 @@ desired effect
                                 </div>
                             </div>
                             <div class="box-body border-radius-none">
-                                <canvas id="totalChart" width="400" height="400"></canvas>
+                                <canvas id="totalChart" width="400" height="300"></canvas>
 
                             </div>
                         </div>
@@ -377,7 +415,7 @@ desired effect
                                 </div>
                             </div>
                             <div class="box-body border-radius-none">
-                                <canvas id="gradeChart" width="400" height="400"></canvas>
+                                <canvas id="gradeChart" width="400" height="300"></canvas>
 
                             </div>
                         </div>
@@ -486,8 +524,10 @@ desired effect
     <!-- AdminLTE App -->
     <script src="dist/js/app.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
+    <script src="js/utils.js"></script>
     <script src="js/totalGraph.js"></script>
     <script src="js/gradeChart.js"></script>
+    <script src="js/overviewChart.js"></script>
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
