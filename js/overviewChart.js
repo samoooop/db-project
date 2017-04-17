@@ -29,7 +29,7 @@ var config = {
         },
         title: {
             display: true,
-            text: 'Chart.js Polar Area Chart'
+            text: ''
         },
         scale: {
             ticks: {
