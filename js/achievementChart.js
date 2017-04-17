@@ -22,6 +22,9 @@ var myChart = new Chart(ctx, {
     type: 'bar',
     data: barChartData,
     options: {
+        legend: {
+            display: false
+        },
         title: {
             display: true,
             text: ""
