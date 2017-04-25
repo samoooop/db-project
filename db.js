@@ -15,6 +15,7 @@ var response = {
     from: "3",
     isIt: true,
 }
+connection.connect();
 
 app.use(express.static("."));
 
@@ -22,15 +23,14 @@ app.get('/json', function(req, res) {
     console.log("A request la")
         // res.send(JSON.stringify(response))
 
-    connection.connect();
 
     connection.query('SELECT * from employee', function(error, results, fields) {
-        if (error) throw error;
-        // console.log('The solution is: ', results);
+        if (error) console.log(error)
+            // console.log('The solution is: ', results);
         res.send(results)
     });
 
-    connection.end();
+    // connection.end();
 })
 
 app.listen(3000, function() {
