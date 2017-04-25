@@ -1,5 +1,3 @@
-var chartColors = window.chartColors;
-var color = Chart.helpers.color;
 var config = {
     type: 'pie',
     data: {
