@@ -12,5 +12,9 @@
 // });
 
 $.getJSON("http://127.0.0.1:3000/json", function(data) {
-    console.log(data.name);
+    console.log(data);
 });
+
+console.log("sdasd")
+$("#numberOfStudent").html(1922)
+$("#1234").val("200")
