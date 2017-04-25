@@ -96,48 +96,118 @@ desired effect
 
             <!-- sidebar: style can be found in sidebar.less -->
             <section class="sidebar">
-
-                <!-- Sidebar user panel (optional) -->
-                <div class="user-panel">
-                    <div class="pull-left image">
-                        <img src="res/person.png" class="img-circle" alt="User Image">
-                    </div>
-                    <div class="pull-left info">
-                        <p>Firstname Lastname</p>
-                        <!-- Status -->
-                        <a href="#">Instructor</a>
-                    </div>
-                </div>
-
-                <!-- search form (Optional) -->
-                <form action="#" method="get" class="sidebar-form">
-                    <div class="input-group">
-                        <input type="text" name="q" class="form-control" placeholder="Search...">
-                        <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-                    </div>
-                </form>
-                <!-- /.search form -->
-
-                <!-- Sidebar Menu -->
-                <ul class="sidebar-menu">
-                    <li class="header">HEADER</li>
-                    <!-- Optionally, you can add icons to the links -->
-                    <li><a href="starter.html"><i class="fa fa-link"></i> <span>ภาพรวมนิสิต</span></a></li>
-                    <li class="active"><a href="detail.html"><i class="fa fa-link"></i> <span>ข้อมูลนิสิต</span></a></li>
-                    <!--<li class="treeview">
-                        <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>-->
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="#">Link in level 2</a></li>
-                        <li><a href="#">Link in level 2</a></li>
-                    </ul>
-                    </li>
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel">
+          <div class="pull-left image">
+              <img src="res/person.png" class="img-circle" alt="User Image">
+          </div>
+          <div class="pull-left info">
+              <p>Firstname Lastname</p>
+              <!-- Status -->
+              <a href="#">ผู้บริหารภาควิชา</a>
+          </div>
+      </div>
+      <!-- search form (Optional) -->
+      <form action="#" method="get" class="sidebar-form">
+          <div class="input-group">
+              <input type="text" name="q" class="form-control" placeholder="Search...">
+              <span class="input-group-btn"> <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                      <i class="fa fa-search"></i>
+                  </button> </span>
+          </div>
+      </form>
+      <!-- /.search form -->
+      <!-- Sidebar Menu -->
+      <ul class="sidebar-menu">
+          <li class="header">HEADER</li>
+          <!-- Optionally, you can add icons to the links -->
+          <li class="active">
+              <a href="ภาพรวม.html">
+                  <i class="fa fa-link"></i>
+                  <span>ภาพรวมนิสิตทุกชั้นปี</span>
+                  <div class="dropdown">
+                      <a data-toggle="dropdown" href="#">ภาพรวมนิสิตแต่ละชั้นปี</a>
+                      <ul class="dropdown-menu" role="menu">
+                          <li>
+                              <a href="ปีx.html"><i class="fa fa-link"></i> <span>นิสิตปี 1</span></a>
+                          </li>
+                          <li>
+                              <a href="ปีx.html"><i class="fa fa-link"></i> <span>นิสิตปี 2</span></a>
+                          </li>
+                          <li>
+                              <a href="ปีx.html"><i class="fa fa-link"></i> <span>นิสิตปี 3</span></a>
+                          </li>
+                          <li>
+                              <a href="ปีx.html"><i class="fa fa-link"></i> <span>นิสิตปี 4</span></a>
+                          </li>
+                          <li>
+                              <a href="ปีx.html"><i class="fa fa-link"></i> <span>นิสิตปีอื่นๆ</span></a>
+                          </li>
+                      </ul>
+                  </div>
+              </a>
+          </li>
+          <li>
+              <a href="detail.html">
+                  <i class="fa fa-link"></i>
+                  <span>ข้อมูลนิสิต</span>
+                  <div class="dropdown">
+                      <a data-toggle="dropdown" href="#">ข้อมูลนิสิตแต่ละชั้นปี</a>
+                      <ul class="dropdown-menu" role="menu">
+                          <li>
+                              <a href="yearX_data.html"><i class="fa fa-link"></i> <span>นิสิตปี 1</span></a>
+                          </li>
+                          <li>
+                              <a href="yearX_data.html"><i class="fa fa-link"></i> <span>นิสิตปี 2</span></a>
+                          </li>
+                          <li>
+                              <a href="yearX_data.html"><i class="fa fa-link"></i> <span>นิสิตปี 3</span></a>
+                          </li>
+                          <li>
+                              <a href="yearX_data.html"><i class="fa fa-link"></i> <span>นิสิตปี 4</span></a>
+                          </li>
+                          <li>
+                              <a href="yearX_data.html"><i class="fa fa-link"></i> <span>นิสิตปีอื่นๆ</span></a>
+                          </li>
+                      </ul>
+                  </div>
+              </a>
+              <a href="yearX_award.html"> <i class="fa fa-link"></i> <span>ผลงานการแข่งขัน</span> </a>
+              <div class="dropdown">
+                  <a data-toggle="dropdown" href="#">ผลการแข่งของนิสิตแต่ละชั้นปี</a>
+                  <ul class="dropdown-menu" role="menu">
+                      <li>
+                          <a href="yearX_award.html"><i class="fa fa-link"></i> <span>นิสิตปี 1</span></a>
+                      </li>
+                      <li>
+                          <a href="yearX_award.html"><i class="fa fa-link"></i> <span>นิสิตปี 2</span></a>
+                      </li>
+                      <li>
+                          <a href="yearX_award.html"><i class="fa fa-link"></i> <span>นิสิตปี 3</span></a>
+                      </li>
+                      <li>
+                          <a href="yearX_award.html"><i class="fa fa-link"></i> <span>นิสิตปี 4</span></a>
+                      </li>
+                      <li>
+                          <a href="yearX_award.html"><i class="fa fa-link"></i> <span>นิสิตปีอื่นๆ</span></a>
+                      </li>
+                  </ul>
+              </div>
+              <a href="subject.html"><i class="fa fa-link"></i> <span>รายละเอียดของภาควิชา<br></span></a>
+          </li>
+          <!--<li class="treeview">
+                          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>-->
+          <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span>
+      </a>
+      <ul class="treeview-menu">
+          <li>
+              <a href="#">Link in level 2</a>
+          </li>
+          <li>
+              <a href="#">Link in level 2</a>
+          </li>
+      </ul>
+  </li>
                 </ul>
                 <!-- /.sidebar-menu -->
             </section>
