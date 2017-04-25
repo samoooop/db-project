@@ -1,4 +1,4 @@
-var barChartData = {
+var rewardChartData = {
     labels: ["ปี1", "ปี2", "ปี3", "ปี4", "Other"],
     datasets: [{
         backgroundColor: "rgb(75, 192, 192)",
@@ -18,9 +18,9 @@ var barChartData = {
 };
 var ctx = document.getElementById("achievementChart");
 
-var myChart = new Chart(ctx, {
+var rewardChart = new Chart(ctx, {
     type: 'bar',
-    data: barChartData,
+    data: rewardChartData,
     options: {
         legend: {
             display: false

@@ -2,14 +2,13 @@ var randomScalingFactor = function() {
     return Math.round(Math.random() * 100);
 };
 
-var datapoints = [2.5, 3.3, 3.0, 3.4, 3.5];
-var config = {
+var gradeChartConfig = {
     type: 'line',
     data: {
         labels: ["ปี1", "ปี2", "ปี3", "ปี4", "Other"],
         datasets: [{
             label: "เกรดเฉลี่ย",
-            data: datapoints,
+            data: [2.5, 3.3, 3.0, 3.4, 3.5],
             borderColor: "rgb(0,200,0)",
             backgroundColor: 'rgba(0, 200, 0, 0)',
             fill: true,
@@ -39,7 +38,7 @@ var config = {
                     labelString: 'Value'
                 },
                 ticks: {
-                    suggestedMin: 2.0,
+                    suggestedMin: 0.0,
                     suggestedMax: 4.0,
                 }
             }]
@@ -48,4 +47,4 @@ var config = {
 };
 
 var ctx = document.getElementById("gradeChart");
-window.myLine = new Chart(ctx, config);
+var gradeChart = new Chart(ctx, gradeChartConfig);
