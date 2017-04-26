@@ -179,10 +179,10 @@ desired effect
                                     </li>                                     
                                 </ul>                                 
                             </div>                             
-                            <a href="subject.html"><i class="fa fa-link"></i> <span>แจ้งเตือนนิสิต<br>&nbsp; &nbsp; &nbsp; &nbsp;ที่ไม่เป็นไปตามแผนการเรียน<br></span></a> 
+                            <a href="alart.html"><i class="fa fa-link"></i> <span>แจ้งเตือนนิสิต<br>&nbsp; &nbsp; &nbsp; &nbsp;ที่ไม่เป็นไปตามแผนการเรียน<br></span></a> 
                         </li>                         
                         <!--<li class="treeview">
-                    <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>-->                         
+                        <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>-->                         
                         <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> 
                     </a>                     
                     <ul class="treeview-menu"> 
@@ -204,92 +204,176 @@ desired effect
         <!-- Content Header (Page header) -->         
         <section class="content-header"> 
             <h1> 
-                    รายชื่อนิสิตที่ไม่เป็นไปตามแผนการศึกษา<small></small></h1> 
-            <div class="row"> 
-                <div class="col-xs-12"> 
-                    <div class="box"> 
-                        <!-- /.box-header -->                         
-                        <div class="box-body"> 
-                            <table id="studentTable" class="table table-bordered table-striped table-hover"> 
-                                <thead> 
-                                    <tr> 
-                                        <th>รหัสนิสิต</th> 
-                                        <th>ชื่อ</th> 
-                                        <th>นามสกุล</th> 
-                                        <th>เกรดเฉลี่ย</th> 
-                                        <th>ผลงาน</th> 
-                                        <th>สถานะ</th> 
-                                        <th></th> 
-                                    </tr>                                     
-                                </thead>                                 
-                                <tbody> 
-                                    <tr> 
-                                        <td>5730000021</td> 
-                                        <td>AAA</td> 
-                                        <td>AAA</td> 
-                                        <td>3.4</td> 
-                                        <td>0</td> 
-                                        <td><span class="label label-success">ปกติ</span></td> 
-                                        <td>
-                                            <a href="studentDetail.html"><span class="label label-info">Detail</span></a>
-                                        </td>                                         
-                                    </tr>                                     
-                                    <tr> 
-                                        <td>5730000121</td> 
-                                        <td>BBB</td> 
-                                        <td>BBB</td> 
-                                        <td>3.5</td> 
-                                        <td>0</td> 
-                                        <td><span class="label label-success">ปกติ</span></td> 
-                                        <td>
-                                            <a href="studentDetail.html"><span class="label label-info">Detail</span></a>
-                                        </td>                                         
-                                    </tr>                                     
-                                    <tr> 
-                                        <td>5730000221</td> 
-                                        <td>CCC</td> 
-                                        <td>CCC</td> 
-                                        <td>3.1</td> 
-                                        <td>0</td> 
-                                        <td><span class="label label-success">ปกติ</span></td> 
-                                        <td>
-                                            <a href="studentDetail.html"><span class="label label-info">Detail</span></a>
-                                        </td>                                         
-                                    </tr>                                     
-                                    <tr> 
-                                        <td>5730000321</td> 
-                                        <td>DDD</td> 
-                                        <td>CCC</td> 
-                                        <td>2.1</td> 
-                                        <td>3</td> 
-                                        <td><span class="label label-warning">exchange</span></td> 
-                                        <td>
-                                            <a href="studentDetail.html"><span class="label label-info">Detail</span></a>
-                                        </td>                                         
-                                    </tr>                                     
-                                    <tr> 
-                                        <td>5730000421</td> 
-                                        <td>EEE</td> 
-                                        <td>EEE</td> 
-                                        <td>1.5</td> 
-                                        <td>0</td> 
-                                        <td><span class="label label-danger">pro</span></td> 
-                                        <td>
-                                            <a href="studentDetail.html"><span class="label label-info">Detail</span></a>
-                                        </td>                                         
-                                    </tr>                                     
-                            </table>                             
-                        </div>                         
-                        <!-- /.box-body -->                         
-                    </div>                     
-                    <!-- /.box -->                     
-                </div>                 
-                <!-- /.col -->                 
-            </div>             
+                    ภาพรวม<small></small> </h1> 
+            <!--<ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+                    <li class="active">Here</li>
+                </ol>-->             
         </section>         
         <!-- Main content -->         
         <section class="content"> 
-</section>         
+            <!-- Your Page Content Here -->             
+            <div class="row"> 
+                <div class="col-lg-3 col-xs-6"> 
+                    <!-- small box -->                     
+                    <div class="small-box bg-aqua"> 
+                        <div class="inner"> 
+                            <h3 id="numberOfStudent">150</h3> 
+                            <p>นิสิต</p> 
+                        </div>                         
+                        <div class="icon"> 
+                            <i class="ion ion-android-person"></i> 
+                        </div>                         
+                        <a href="#" class="small-box-footer">รายละเอียด<i class="fa fa-arrow-circle-right"></i></a> 
+                    </div>                     
+                    <!-- small box -->                     
+                    <div class="small-box bg-green"> 
+                        <div class="inner"> 
+                            <h3 id="numberOfFineStudent">145</h3> 
+                            <p>Doing fine</p> 
+                        </div>                         
+                        <div class="icon"> 
+                            <i class="ion-android-happy"></i> 
+                        </div>                         
+                        <a href="#" class="small-box-footer">รายละเอียด<i class="fa fa-arrow-circle-right"></i></a> 
+                    </div>                     
+                    <!-- small box -->                     
+                    <div class="small-box bg-red"> 
+                        <div class="inner"> 
+                            <h3 id="numberOfProbatedStudent">5</h3> 
+                            <p>Under Probation</p> 
+                        </div>                         
+                        <div class="icon"> 
+                            <i class="ion-android-sad"></i> 
+                        </div>                         
+                        <a href="#" class="small-box-footer">รายละเอียด<i class="fa fa-arrow-circle-right"></i></a> 
+                    </div>                     
+                </div>                 
+                <div class="col-lg-3 col-xs-6"> 
+                    <!-- small box -->                     
+                    <div class="small-box bg-orange"> 
+                        <div class="inner"> 
+                            <h3 id="numberOfLeavingStudent">2</h3> 
+                            <p>On Leave</p> 
+                        </div>                         
+                        <div class="icon"> 
+                            <i class="ion-android-hand"></i> 
+                        </div>                         
+                        <a href="#" class="small-box-footer">รายละเอียด<i class="fa fa-arrow-circle-right"></i></a> 
+                    </div>                     
+                    <!-- small box -->                     
+                    <div class="small-box bg-yellow"> 
+                        <div class="inner"> 
+                            <h3 id="numberOfExchangeStudent">1</h3> 
+                            <p>Exchage</p> 
+                        </div>                         
+                        <div class="icon"> 
+                            <i class="ion-android-plane"></i> 
+                        </div>                         
+                        <a href="#" class="small-box-footer">รายละเอียด<i class="fa fa-arrow-circle-right"></i></a> 
+                    </div>                     
+                </div>                 
+                <div class="col-xs-6"> 
+                    <div class="box box-solid"> 
+                        <div class="box-header"> 
+                            <i class="fa fa-th"></i> 
+                            <h3 class="box-title">จำนวนนิสิตแบ่งตามชั้นปี</h3> 
+                            <div class="box-tools pull-right"> 
+                                <button type="button" class="btn btn-sm" data-widget="collapse">
+                                    <i class="fa fa-minus"></i>
+                                </button>                                 
+                                <button type="button" class="btn bg-red btn-sm" data-widget="remove">
+                                    <i class="fa fa-times"></i>
+                                </button>                                 
+                            </div>                             
+                        </div>                         
+                        <div class="box-body border-radius-none"> 
+                            <canvas id="totalChart" width="400" height="300"></canvas>                             
+                        </div>                         
+                    </div>                     
+                </div>                 
+                <!-- ./col -->                 
+                <!--<div class="col-lg-6 col-xs-6">
+                        <div class="box box-solid">
+                            <div class="box-header">
+                                <i class="fa fa-th"></i>
+
+                                <h3 class="box-title">จำนวนนิสิตแบ่งตามสถานะ</h3>
+
+                                <div class="box-tools pull-right">
+                                    <button type="button" class="btn btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                    <button type="button" class="btn bg-red btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                                </div>
+                            </div>
+                            <div class="box-body border-radius-none">
+                                <canvas id="overviewChart" width="400" height="275"></canvas>
+
+                            </div>
+                        </div>
+                    </div>-->                 
+            </div>             
+            <div class="row"> 
+                <div class="col-xs-6"> 
+                    <div class="box box-solid"> 
+                        <div class="box-header"> 
+                            <i class="fa fa-th"></i> 
+                            <h3 class="box-title">จำนวนรางวัลและผลงานของนิสิตแบ่งตามชั้นปี</h3> 
+                            <div class="box-tools pull-right"> 
+                                <button type="button" class="btn btn-sm" data-widget="collapse">
+                                    <i class="fa fa-minus"></i>
+                                </button>                                 
+                                <button type="button" class="btn bg-red btn-sm" data-widget="remove">
+                                    <i class="fa fa-times"></i>
+                                </button>                                 
+                            </div>                             
+                        </div>                         
+                        <div class="box-body border-radius-none"> 
+                            <canvas id="achievementChart" width="400" height="300"></canvas>                             
+                        </div>                         
+                    </div>                     
+                </div>                 
+                <div class="col-xs-6"> 
+                    <div class="box box-solid"> 
+                        <div class="box-header"> 
+                            <i class="fa fa-th"></i> 
+                            <h3 class="box-title">เกรดเฉลี่ยนของนิสิตแบ่งตามชั้นปี</h3> 
+                            <div class="box-tools pull-right"> 
+                                <button type="button" class="btn btn-sm" data-widget="collapse">
+                                    <i class="fa fa-minus"></i>
+                                </button>                                 
+                                <button type="button" class="btn bg-red btn-sm" data-widget="remove">
+                                    <i class="fa fa-times"></i>
+                                </button>                                 
+                            </div>                             
+                        </div>                         
+                        <div class="box-body border-radius-none"> 
+                            <canvas id="gradeChart" width="400" height="300"></canvas>                             
+                        </div>                         
+                    </div>                     
+                </div>                 
+            </div>             
+            <div class="row"> 
+                <!--<div class="col-xs-6">
+                        <div class="box box-solid">
+                            <div class="box-header">
+                                <i class="fa fa-th"></i>
+
+                                <h3 class="box-title">จำนวนรางวัลและผลงานของนิสิตแบ่งตามชั้นปี</h3>
+
+                                <div class="box-tools pull-right">
+                                    <button type="button" class="btn btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                    <button type="button" class="btn bg-red btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                                </div>
+                            </div>
+                            <div class="box-body border-radius-none">
+                                <canvas id="achievementChart" width="400" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>-->                 
+                <div class="col-xs-6"> 
+</div>                 
+            </div>             
+        </section>         
         <!-- /.content -->         
     </div>     
     <!-- /.content-wrapper -->     
@@ -310,16 +394,17 @@ desired effect
 <!-- AdminLTE App --> 
 <script src="dist/js/app.min.js"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script> 
-<script src="plugins/datatables/jquery.dataTables.min.js"></script> 
-<script src="plugins/datatables/dataTables.bootstrap.min.js"></script> 
 <script src="js/utils.js"></script> 
 <script src="js/chartjsGlobalSetting.js"></script> 
+<script src="js/totalGraph.js"></script> 
+<script src="js/gradeChart.js"></script> 
+<!--<script src="js/overviewChart.js"></script>--> 
+<script src="js/achievementChart.js"></script> 
+<script src="js/index.js"></script> 
 <script>
-        $(function() {
-            $("#studentTable").DataTable();
-        });
+        $('.sidebar-menu').load('ปี2.html .sidebar-menu');
     </script> 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
-     fixed layout. -->  
+     fixed layout. -->
