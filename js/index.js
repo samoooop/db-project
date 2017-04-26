@@ -29,7 +29,7 @@ function getCookie(cname) {
 var result
 
 function updateOverviewData(year) {
-    $.getJSON("http://127.0.0.1:3000/index", function(res) {
+    $.getJSON("/index", function(res) {
         console.log(res);
         result = res
             // for (var i = 0; i < result.length; i++) {

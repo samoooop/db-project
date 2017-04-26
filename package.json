@@ -23,6 +23,10 @@
     "grunt-includes": "^0.4.5"
   },
   "dependencies": {
-    "mysql": "^2.13.0"
+    "async": "^2.3.0",
+    "body-parser": "^1.17.1",
+    "client-sessions": "^0.8.0",
+    "mysql": "^2.13.0",
+    "passport": "^0.3.2"
   }
 }
