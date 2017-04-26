@@ -51,14 +51,19 @@ function updateOverviewData(year) {
             $("#totalChartDiv").show();
             $("#rewardChartDiv").show();
             $("#averageGradeChartDiv").show();
+            indivGradeChart.update();
+            $("#indivGradeChartDiv").hide();
         } else {
             $("#totalChartDiv").hide();
             $("#rewardChartDiv").hide();
             $("#averageGradeChartDiv").hide();
+            $("#indivGradeChartDiv").show();
         }
         totalChart.update();
         gradeChart.update();
         rewardChart.update();
+        indivGradeChart.update();
+        createIndivGradeChart();
         // console.log(totalChart)
     });
 }

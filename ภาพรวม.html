@@ -138,7 +138,7 @@ desired effect
                     </li>
                     <!--Overview sidemenu-->
                     <li class="treeview">
-                        <a href="detail.html" onclick="location.href='detail.html'">
+                        <a href="detail.html" onclick="location.href='award.html'">
                             <i class="fa fa-child"></i> <span>ข้อมูลนิสิต</span>
                             <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                         </a>
@@ -152,7 +152,7 @@ desired effect
                         </ul>
                     </li>
                     <!--Overview sidemenu-->
-                    <li class="treeview">
+                    <li class="treeview" onclick="location.href='subject.html'">
                         <a href="#">
                             <i class="fa fa-star-o"></i> <span>ผลงานการแข่งขัน</span>
                             <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
@@ -167,7 +167,7 @@ desired effect
                         </ul>
                     </li>
                     <!--Overview sidemenu-->
-                    <li class="treeview">
+                    <li class="treeview" onclick="location.href='subject.html'">
                         <a href="#">
                             <i class="fa fa-book"></i> <span>รายละเอียดของภาควิชา</span>
                             <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
@@ -267,12 +267,12 @@ desired effect
                         <a href="#" class="small-box-footer">รายละเอียด<i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                <div class="col-xs-12" id="indivGradeDiv">
+                <div class="col-xs-12" id="indivGradeChartDiv">
                     <div class="box box-solid">
                         <div class="box-header">
                             <i class="fa fa-th"></i>
 
-                            <h3 class="box-title">จำนวนนิสิตแบ่งตามชั้นปี</h3>
+                            <h3 class="box-title">เกรดของนิสิตรายบุคคล</h3>
 
                             <div class="box-tools pull-right">
                                 <button type="button" class="btn btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -280,8 +280,7 @@ desired effect
                             </div>
                         </div>
                         <div class="box-body border-radius-none">
-                            <canvas id="totalChart" width="400" height="300"></canvas>
-
+                            <canvas id="indivGradeChart"></canvas>
                         </div>
                     </div>
                 </div>
@@ -404,6 +403,7 @@ desired effect
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <!-- AdminLTE App -->
     <script src="dist/js/app.min.js"></script>
+    <script src="js/rainbow.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/chartjsGlobalSetting.js"></script>
@@ -411,6 +411,7 @@ desired effect
     <script src="js/gradeChart.js"></script>
     <!--<script src="js/overviewChart.js"></script>-->
     <script src="js/achievementChart.js"></script>
+    <script src="js/indivGradeChart.js"></script>
     <script src="js/index.js"></script>
 
     <script>
