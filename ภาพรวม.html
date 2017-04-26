@@ -123,7 +123,7 @@ desired effect
                     <!-- Optionally, you can add icons to the links -->
                     <!--Overview sidemenu-->
                     <li class="treeview active">
-                        <a href="#">
+                        <a href="ภาพรวม.html">
                             <i class="fa fa-bar-chart"></i> <span>ภาพรวม</span>
                             <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                         </a>
@@ -138,17 +138,17 @@ desired effect
                     </li>
                     <!--Overview sidemenu-->
                     <li class="treeview">
-                        <a href="#">
+                        <a href="detail.html" onclick="location.href='detail.html'">
                             <i class="fa fa-child"></i> <span>ข้อมูลนิสิต</span>
                             <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ทุกชั้นปี</a></li>
-                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี1</a></li>
-                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี2</a></li>
-                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี3</a></li>
-                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี4</a></li>
-                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปีอื่นๆ</a></li>
+                            <li><a href="detail.html"><i class="fa fa-circle-o"></i> ทุกชั้นปี</a></li>
+                            <li><a href="detail.html"><i class="fa fa-circle-o"></i> ปี1</a></li>
+                            <li><a href="detail.html"><i class="fa fa-circle-o"></i> ปี2</a></li>
+                            <li><a href="detail.html"><i class="fa fa-circle-o"></i> ปี3</a></li>
+                            <li><a href="detail.html"><i class="fa fa-circle-o"></i> ปี4</a></li>
+                            <li><a href="detail.html"><i class="fa fa-circle-o"></i> ปีอื่นๆ</a></li>
                         </ul>
                     </li>
                     <!--Overview sidemenu-->
@@ -265,6 +265,24 @@ desired effect
                             <i class="ion-android-hand"></i>
                         </div>
                         <a href="#" class="small-box-footer">รายละเอียด<i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-xs-12" id="indivGradeDiv">
+                    <div class="box box-solid">
+                        <div class="box-header">
+                            <i class="fa fa-th"></i>
+
+                            <h3 class="box-title">จำนวนนิสิตแบ่งตามชั้นปี</h3>
+
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn bg-red btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body border-radius-none">
+                            <canvas id="totalChart" width="400" height="300"></canvas>
+
+                        </div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-6" id="totalChartDiv">
