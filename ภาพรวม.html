@@ -121,92 +121,65 @@ desired effect
                 <ul class="sidebar-menu">
                     <li class="header">HEADER</li>
                     <!-- Optionally, you can add icons to the links -->
-                    <li class="active">
-                        <a href="ภาพรวม.html">
-                            <i class="fa fa-link"></i>
-                            <span>ภาพรวมนิสิตทุกชั้นปี</span>
+                    <!--Overview sidemenu-->
+                    <li class="treeview active">
+                        <a href="#">
+                            <i class="fa fa-bar-chart"></i> <span>ภาพรวม</span>
+                            <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                         </a>
-                        <div class="dropdown">
-                            <a data-toggle="dropdown" href="#">ภาพรวมนิสิตแต่ละชั้นปี</a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li>
-                                    <a href="ปีx.html?year=1"><i class="fa fa-link"></i> <span>นิสิตปี 1</span></a>
-                                </li>
-                                <li>
-                                    <a href="ปีx.html?year=2"><i class="fa fa-link"></i> <span>นิสิตปี 2</span></a>
-                                </li>
-                                <li>
-                                    <a href="ปีx.html?year=3"><i class="fa fa-link"></i> <span>นิสิตปี 3</span></a>
-                                </li>
-                                <li>
-                                    <a href="ปีx.html?year=4"><i class="fa fa-link"></i> <span>นิสิตปี 4</span></a>
-                                </li>
-                                <li>
-                                    <a href="ปีx.html?year=other"><i class="fa fa-link"></i> <span>นิสิตปีอื่นๆ</span></a>
-                                </li>
-                            </ul>
-                        </div>
+                        <ul class="treeview-menu">
+                            <li id="overviewSideMenu0" class="active"><a onclick="overviewFunc(0)"><i class="fa fa-circle-o active"></i> ทุกชั้นปี</a></li>
+                            <li id="overviewSideMenu1"><a onclick="overviewFunc(1)"><i class="fa fa-circle-o"></i> ปี1</a></li>
+                            <li id="overviewSideMenu2"><a onclick="overviewFunc(2)"><i class="fa fa-circle-o"></i> ปี2</a></li>
+                            <li id="overviewSideMenu3"><a onclick="overviewFunc(3)"><i class="fa fa-circle-o"></i> ปี3</a></li>
+                            <li id="overviewSideMenu4"><a onclick="overviewFunc(4)"><i class="fa fa-circle-o"></i> ปี4</a></li>
+                            <li id="overviewSideMenu5"><a onclick="overviewFunc(5)"><i class="fa fa-circle-o"></i> ปีอื่นๆ</a></li>
+                        </ul>
                     </li>
-                    <li>
-                        <a href="detail.html">
-                            <i class="fa fa-link"></i>
-                            <span>ข้อมูลนิสิต</span>
-                            <div class="dropdown">
-                                <a data-toggle="dropdown" href="#">ข้อมูลนิสิตแต่ละชั้นปี</a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="yearX_data.html"><i class="fa fa-link"></i> <span>นิสิตปี 1</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="yearX_data.html"><i class="fa fa-link"></i> <span>นิสิตปี 2</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="yearX_data.html"><i class="fa fa-link"></i> <span>นิสิตปี 3</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="yearX_data.html"><i class="fa fa-link"></i> <span>นิสิตปี 4</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="yearX_data.html"><i class="fa fa-link"></i> <span>นิสิตปีอื่นๆ</span></a>
-                                    </li>
-                                </ul>
-                            </div>
+                    <!--Overview sidemenu-->
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-child"></i> <span>ข้อมูลนิสิต</span>
+                            <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                         </a>
-                        <a href="yearX_award.html"> <i class="fa fa-link"></i> <span>ผลงานการแข่งขัน</span> </a>
-                        <div class="dropdown">
-                            <a data-toggle="dropdown" href="#">ผลการแข่งของนิสิตแต่ละชั้นปี</a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li>
-                                    <a href="yearX_award.html"><i class="fa fa-link"></i> <span>นิสิตปี 1</span></a>
-                                </li>
-                                <li>
-                                    <a href="yearX_award.html"><i class="fa fa-link"></i> <span>นิสิตปี 2</span></a>
-                                </li>
-                                <li>
-                                    <a href="yearX_award.html"><i class="fa fa-link"></i> <span>นิสิตปี 3</span></a>
-                                </li>
-                                <li>
-                                    <a href="yearX_award.html"><i class="fa fa-link"></i> <span>นิสิตปี 4</span></a>
-                                </li>
-                                <li>
-                                    <a href="yearX_award.html"><i class="fa fa-link"></i> <span>นิสิตปีอื่นๆ</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <a href="subject.html"><i class="fa fa-link"></i> <span>รายละเอียดของภาควิชา<br></span></a>
+                        <ul class="treeview-menu">
+                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ทุกชั้นปี</a></li>
+                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี1</a></li>
+                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี2</a></li>
+                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี3</a></li>
+                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี4</a></li>
+                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปีอื่นๆ</a></li>
+                        </ul>
                     </li>
-                    <!--<li class="treeview">
-                        <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>-->
-                    <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li>
-                            <a href="#">Link in level 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Link in level 2</a>
-                        </li>
-                    </ul>
+                    <!--Overview sidemenu-->
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-star-o"></i> <span>ผลงานการแข่งขัน</span>
+                            <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ทุกชั้นปี</a></li>
+                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี1</a></li>
+                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี2</a></li>
+                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี3</a></li>
+                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี4</a></li>
+                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปีอื่นๆ</a></li>
+                        </ul>
+                    </li>
+                    <!--Overview sidemenu-->
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-book"></i> <span>รายละเอียดของภาควิชา</span>
+                            <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ทุกชั้นปี</a></li>
+                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี1</a></li>
+                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี2</a></li>
+                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี3</a></li>
+                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี4</a></li>
+                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปีอื่นๆ</a></li>
+                        </ul>
                     </li>
                 </ul>
                 <!-- /.sidebar-menu -->
@@ -232,91 +205,88 @@ desired effect
             <section class="content">
 
                 <!-- Your Page Content Here -->
-                <div class="row">
-                    <div class="col-lg-3 col-xs-6">
-                        <!-- small box -->
-                        <div class="small-box bg-aqua">
-                            <div class="inner">
-                                <h3 id="numberOfStudent">150</h3>
+                <div class="col-lg-12 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-green col-xs-3">
+                        <div class="inner">
+                            <h3 id="numberOfStudent">150</h3>
 
-                                <p>นิสิต</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-android-person"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">รายละเอียด<i class="fa fa-arrow-circle-right"></i></a>
+                            <p>นิสิต</p>
                         </div>
-                        <!-- small box -->
-                        <div class="small-box bg-green">
-                            <div class="inner">
-                                <h3 id="numberOfFineStudent">145</h3>
-
-                                <p>Doing fine</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion-android-happy"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">รายละเอียด<i class="fa fa-arrow-circle-right"></i></a>
+                        <div class="icon">
+                            <i class="ion ion-android-person"></i>
                         </div>
-                        <!-- small box -->
-                        <div class="small-box bg-red">
-                            <div class="inner">
-                                <h3 id="numberOfProbatedStudent">5</h3>
+                        <a href="#" class="small-box-footer">รายละเอียด<i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                    <!-- small box -->
+                    <!--<div class="small-box bg-green col-xs-3">
+                        <div class="inner">
+                            <h3 id="numberOfFineStudent">145</h3>
 
-                                <p>Under Probation</p>
+                            <p>Doing fine</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion-android-happy"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">รายละเอียด<i class="fa fa-arrow-circle-right"></i></a>
+                    </div>-->
+                    <!-- small box -->
+                    <div class="small-box bg-red col-xs-3">
+                        <div class="inner">
+                            <h3 id="numberOfProbatedStudent">5</h3>
+
+                            <p>Under Probation</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion-android-sad"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">รายละเอียด<i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                    <!-- small box -->
+                    <div class="small-box bg-aqua col-xs-3">
+                        <div class="inner">
+                            <h3 id="numberOfExchangeStudent">1</h3>
+
+                            <p>Exchage</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion-android-plane"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">รายละเอียด<i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                    <!-- small box -->
+                    <div class="small-box bg-orange col-xs-3">
+                        <div class="inner">
+                            <h3 id="numberOfLeavingStudent">2</h3>
+
+                            <p>On Leave</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion-android-hand"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">รายละเอียด<i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6" id="totalChartDiv">
+                    <div class="box box-solid">
+                        <div class="box-header">
+                            <i class="fa fa-th"></i>
+
+                            <h3 class="box-title">จำนวนนิสิตแบ่งตามชั้นปี</h3>
+
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn bg-red btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
                             </div>
-                            <div class="icon">
-                                <i class="ion-android-sad"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">รายละเอียด<i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                        <div class="box-body border-radius-none">
+                            <canvas id="totalChart" width="400" height="300"></canvas>
+
                         </div>
                     </div>
-                    <div class="col-lg-3 col-xs-6">
-                        <!-- small box -->
-                        <div class="small-box bg-orange">
-                            <div class="inner">
-                                <h3 id="numberOfLeavingStudent">2</h3>
-
-                                <p>On Leave</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion-android-hand"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">รายละเอียด<i class="fa fa-arrow-circle-right"></i></a>
-                        </div>
-                        <!-- small box -->
-                        <div class="small-box bg-yellow">
-                            <div class="inner">
-                                <h3 id="numberOfExchangeStudent">1</h3>
-
-                                <p>Exchage</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion-android-plane"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">รายละเอียด<i class="fa fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-xs-6">
-                        <div class="box box-solid">
-                            <div class="box-header">
-                                <i class="fa fa-th"></i>
-
-                                <h3 class="box-title">จำนวนนิสิตแบ่งตามชั้นปี</h3>
-
-                                <div class="box-tools pull-right">
-                                    <button type="button" class="btn btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                                    <button type="button" class="btn bg-red btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
-                                </div>
-                            </div>
-                            <div class="box-body border-radius-none">
-                                <canvas id="totalChart" width="400" height="300"></canvas>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ./col -->
-                    <!--<div class="col-lg-6 col-xs-6">
+                </div>
+                <!-- ./col -->
+                <!--<div class="col-lg-6 col-xs-6">
                         <div class="box box-solid">
                             <div class="box-header">
                                 <i class="fa fa-th"></i>
@@ -334,42 +304,38 @@ desired effect
                             </div>
                         </div>
                     </div>-->
-                </div>
-                <div class=row>
+                <div class="col-xs-12 col-md-6" id="rewardChartDiv">
+                    <div class="box box-solid">
+                        <div class="box-header">
+                            <i class="fa fa-th"></i>
 
-                    <div class="col-xs-6">
-                        <div class="box box-solid">
-                            <div class="box-header">
-                                <i class="fa fa-th"></i>
+                            <h3 class="box-title">จำนวนรางวัลและผลงานของนิสิตแบ่งตามชั้นปี</h3>
 
-                                <h3 class="box-title">จำนวนรางวัลและผลงานของนิสิตแบ่งตามชั้นปี</h3>
-
-                                <div class="box-tools pull-right">
-                                    <button type="button" class="btn btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                                    <button type="button" class="btn bg-red btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
-                                </div>
-                            </div>
-                            <div class="box-body border-radius-none">
-                                <canvas id="achievementChart" width="400" height="300"></canvas>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn bg-red btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
                             </div>
                         </div>
+                        <div class="box-body border-radius-none">
+                            <canvas id="achievementChart" width="400" height="300"></canvas>
+                        </div>
                     </div>
-                    <div class="col-xs-6">
-                        <div class="box box-solid">
-                            <div class="box-header">
-                                <i class="fa fa-th"></i>
+                </div>
+                <div class="col-xs-12 col-md-6" id="averageGradeChartDiv">
+                    <div class="box box-solid">
+                        <div class="box-header">
+                            <i class="fa fa-th"></i>
 
-                                <h3 class="box-title">เกรดเฉลี่ยนของนิสิตแบ่งตามชั้นปี</h3>
+                            <h3 class="box-title">เกรดเฉลี่ยนของนิสิตแบ่งตามชั้นปี</h3>
 
-                                <div class="box-tools pull-right">
-                                    <button type="button" class="btn btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                                    <button type="button" class="btn bg-red btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
-                                </div>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn bg-red btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
                             </div>
-                            <div class="box-body border-radius-none">
-                                <canvas id="gradeChart" width="400" height="300"></canvas>
+                        </div>
+                        <div class="box-body border-radius-none">
+                            <canvas id="gradeChart" width="400" height="300"></canvas>
 
-                            </div>
                         </div>
                     </div>
                 </div>
