@@ -1,0 +1,10 @@
+var fs = require('fs');
+
+exports.queryString = {
+    numberOfStudent: fs.readFileSync('sql/GetNumberOfStudent.sql', 'utf8'),
+    averageGrade: fs.readFileSync('sql/GetAverageGrade.sql', 'utf8'),
+    numberOfReward: fs.readFileSync('sql/GetNumberOfReward.sql', 'utf8'),
+    numberOfProbatedStudent: fs.readFileSync('sql/GetNumberOfProbatedStudent.sql', 'utf8'),
+    numberOfLeavingStudent: fs.readFileSync('sql/GetNumberOfLeavingStudent.sql', 'utf8'),
+    numberOfExchangeStudent: fs.readFileSync('sql/GetNumberOfExchangeStudent.sql', 'utf8'),
+}

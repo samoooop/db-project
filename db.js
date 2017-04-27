@@ -7,15 +7,15 @@ var async = require('async');
 var users = require('./users.js');
 var query = require('./query.js');
 
-var dbconfig = {
-    host: '139.59.100.65',
-    user: 'root',
-    password: 'password',
-    database: 'Company',
-    port: 3306,
-}
-var connection = mysql.createConnection(dbconfig);
-connection.connect();
+// var dbconfig = {
+//     host: '139.59.100.65',
+//     user: 'root',
+//     password: 'password',
+//     database: 'Company',
+//     port: 3306,
+// }
+// var connection = mysql.createConnection(dbconfig);
+// connection.connect();
 
 var app = express()
 app.use(bodyParser.json()); // to support JSON-encoded bodies
@@ -61,41 +61,49 @@ app.all('/logout', function(req, res) {
 });
 
 app.get('/json', function(req, res) {
-    console.log("A request la" + req.query.ID)
-        // res.send(JSON.stringify(response))
-    connection.query('SELECT * from employee', function(error, results, fields) {
-        if (error) console.log(error)
-            // console.log('The solution is: ', results);
-        res.send(results)
-    });
-})
+    console.log("A request la" + req.query.ID);
+    // res.send(JSON.stringify(response))
+    // connection.query('SELECT * from employee', function(error, results, fields) {
+    // if (error) console.log(error)
+    // console.log('The solution is: ', results);
+    res.send(results)
+});
 
 app.get('/index', function(req, res) {
-    console.log("requested" + req.cookies);
+    console.log("requested " + req.cookies);
     // var connection = mysql.createConnection(dbconfig);
     // connection.connect();
-    var response = {
-        // [1st,2nd,3rd,4th,other]
-        numberOfStudent: [2, 2, 2, 2, 2],
-        numberOfFineStudent: [1, 2, 3, 4, 5],
-        numberOfProbatedStudent: [1, 2, 3, 4, 5],
-        numberOfExchangeStudent: [1, 2, 3, 4, 5],
-        numberOfLeavingStudent: [1, 2, 3, 4, 5],
-        averageGrade: [2.5, 3.1, 3.6, 4.0, 2.00],
-        numberOfReward: [100, 200, 300, 400, 500],
-    }
-
-    res.send(response);
+    promises = []
+    promises.push(query.getNumberOfStudent(req.cookie.id));
+    promises.push(query.getNumberOfProbatedStudent(req.cookie.id));
+    promises.push(query.getNumberOfExchangeStudent(req.cookie.id))
+    promises.push(query.getNumberOfLeavingStudent(req.cookie.id));
+    promises.push(query.getAverageGrade(req.cookie.id));
+    promises.push(query.getNumberOfReward(req.cookie.id));
+    Promise.all(promises).then(result => {
+        var response = {
+            // [1st,2nd,3rd,4th,other]
+            numberOfStudent: result[0],
+            numberOfFineStudent: result[0].map((x, idx) => x - result[1][idx] - result[3][idx]),
+            numberOfProbatedStudent: result[1],
+            numberOfExchangeStudent: result[2],
+            numberOfLeavingStudent: result[3],
+            averageGrade: result[4],
+            numberOfReward: result[5],
+        }
+        console.log(response);
+        res.send(response);
+    });
     // connection.end();
-    console.log("requested")
+    // console.log("requested")
 })
 
 app.listen(3000, function() {
     console.log('app listening on port 3000!')
 })
 
-AsyncPolling(function(end) {
-    // Beat
-    connection.query('SELECT 1', function(error, results, fields) {});
-    end();
-}, 3000).run();
+// AsyncPolling(function(end) {
+//     // Beat
+//     connection.query('SELECT 1', function(error, results, fields) {});
+//     end();
+// }, 3000).run();
