@@ -61,7 +61,7 @@ function createIndivGradeChart() {
     var newData = [randomScalingFactor()];
     var newLabel = ["<2"];
 
-    indivGradeChart.clear();
+    indivGradeChart.destroy();
     for (var i = 2; i <= 4; i += step) {
         var j = Number((i).toFixed(1));
         newData.push(randomScalingFactor());

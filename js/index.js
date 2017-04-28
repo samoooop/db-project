@@ -35,34 +35,47 @@ function updateOverviewData(year) {
             // for (var i = 0; i < result.length; i++) {
             //     // console.log(result[i].Fname)
             // }
-        $('#numberOfStudent').html(res.numberOfStudent.reduce((a, b) => a + b, 0));
-        $('#numberOfFineStudent').html(res.numberOfFineStudent.reduce((a, b) => a + b, 0));
-        $('#numberOfProbatedStudent').html(res.numberOfProbatedStudent.reduce((a, b) => a + b, 0));
-        $('#numberOfExchangeStudent').html(res.numberOfExchangeStudent.reduce((a, b) => a + b, 0));
-        $('#numberOfLeavingStudent').html(res.numberOfLeavingStudent.reduce((a, b) => a + b, 0));
-        totalChartData.datasets[0].data = res.numberOfFineStudent;
-        totalChartData.datasets[1].data = res.numberOfProbatedStudent;
-        totalChartData.datasets[2].data = res.numberOfLeavingStudent;
-        totalChartData.datasets[3].data = res.numberOfExchangeStudent;
-        // totalChart.config.data.datasets = [1, 2, 3, 4, 5];
-        gradeChartConfig.data.datasets[0].data = res.averageGrade;
-        rewardChartData.datasets[0].data = res.numberOfReward;
         if (year == 0) {
+            // change data
+            $('#numberOfStudent').html(res.numberOfStudent.reduce((a, b) => a + b, 0));
+            // $('#numberOfFineStudent').html(res.numberOfFineStudent.reduce((a, b) => a + b, 0));
+            $('#numberOfProbatedStudent').html(res.numberOfProbatedStudent.reduce((a, b) => a + b, 0));
+            $('#numberOfExchangeStudent').html(res.numberOfExchangeStudent.reduce((a, b) => a + b, 0));
+            $('#numberOfLeavingStudent').html(res.numberOfLeavingStudent.reduce((a, b) => a + b, 0));
+            totalChartData.datasets[0].data = res.numberOfFineStudent;
+            totalChartData.datasets[1].data = res.numberOfProbatedStudent;
+            totalChartData.datasets[2].data = res.numberOfLeavingStudent;
+            totalChartData.datasets[3].data = res.numberOfExchangeStudent;
+            gradeChartConfig.data.datasets[0].data = res.averageGrade;
+            rewardChartData.datasets[0].data = res.numberOfReward;
+            // show/hide chart
             $("#totalChartDiv").show();
             $("#rewardChartDiv").show();
             $("#averageGradeChartDiv").show();
-            indivGradeChart.update();
+            // indivGradeChart.update();
             $("#indivGradeChartDiv").hide();
         } else {
+            $('#numberOfStudent').html(res.numberOfStudent[year - 1]);
+            // $('#numberOfFineStudent').html(res.numberOfFineStudent[year - 1]);
+            $('#numberOfProbatedStudent').html(res.numberOfProbatedStudent[year - 1]);
+            $('#numberOfExchangeStudent').html(res.numberOfExchangeStudent[year - 1]);
+            $('#numberOfLeavingStudent').html(res.numberOfLeavingStudent[year - 1]);
+            totalChartData.datasets[0].data = res.numberOfFineStudent;
+            totalChartData.datasets[1].data = res.numberOfProbatedStudent;
+            totalChartData.datasets[2].data = res.numberOfLeavingStudent;
+            totalChartData.datasets[3].data = res.numberOfExchangeStudent;
+            gradeChartConfig.data.datasets[0].data = res.averageGrade;
+            rewardChartData.datasets[0].data = res.numberOfReward;
             $("#totalChartDiv").hide();
             $("#rewardChartDiv").hide();
             $("#averageGradeChartDiv").hide();
             $("#indivGradeChartDiv").show();
         }
+        // totalChart.clear();
         totalChart.update();
         gradeChart.update();
         rewardChart.update();
-        indivGradeChart.update();
+        // indivGradeChart.update();
         createIndivGradeChart();
         // console.log(totalChart)
     });

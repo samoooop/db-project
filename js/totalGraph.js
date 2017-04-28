@@ -38,10 +38,10 @@ var totalChart = new Chart(ctx, {
             display: true,
             text: ""
         },
-        tooltips: {
-            mode: 'index',
-            intersect: false
-        },
+        // tooltips: {
+        //     mode: 'index',
+        //     // intersect: false
+        // },
         responsive: true,
         scales: {
             xAxes: [{

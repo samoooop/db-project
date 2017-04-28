@@ -96,11 +96,27 @@ app.get('/index', function(req, res) {
     });
     // connection.end();
     // console.log("requested")
-})
+});
+
+app.get('/whoami', function(req, res) {
+    console.log('whoami');
+    if (req.cookie.id === undefined) {
+        console.log('not found');
+        res.send({
+            whoami: 'unknown',
+        });
+    } else {
+        var whoami = users.getRole(req.cookie.id);
+        console.log('whoami : ', whoami)
+        res.send({
+            whoami: whoami,
+        });
+    }
+});
 
 app.listen(3000, function() {
     console.log('app listening on port 3000!')
-})
+});
 
 // AsyncPolling(function(end) {
 //     // Beat
