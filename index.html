@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Starter</title>
+    <title>Another RegChula</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
@@ -122,54 +122,54 @@ desired effect
                     <li class="header">HEADER</li>
                     <!-- Optionally, you can add icons to the links -->
                     <!--Overview sidemenu-->
-                    <li class="treeview active">
+                    <li class="treeview" id="sideMenuOverview">
                         <a href="ภาพรวม.html">
                             <i class="fa fa-bar-chart"></i> <span>ภาพรวม</span>
                             <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                         </a>
                         <ul class="treeview-menu">
-                            <li id="overviewSideMenu0" class="active"><a onclick="overviewFunc(0)"><i class="fa fa-circle-o active"></i> ทุกชั้นปี</a></li>
-                            <li id="overviewSideMenu1"><a onclick="overviewFunc(1)"><i class="fa fa-circle-o"></i> ปี1</a></li>
-                            <li id="overviewSideMenu2"><a onclick="overviewFunc(2)"><i class="fa fa-circle-o"></i> ปี2</a></li>
-                            <li id="overviewSideMenu3"><a onclick="overviewFunc(3)"><i class="fa fa-circle-o"></i> ปี3</a></li>
-                            <li id="overviewSideMenu4"><a onclick="overviewFunc(4)"><i class="fa fa-circle-o"></i> ปี4</a></li>
-                            <li id="overviewSideMenu5"><a onclick="overviewFunc(5)"><i class="fa fa-circle-o"></i> ปีอื่นๆ</a></li>
+                            <li id="overviewSideMenu0"><a href="/index.html?year=0"><i class="fa fa-circle-o active"></i> ทุกชั้นปี</a></li>
+                            <li id="overviewSideMenu1"><a href="/index.html?year=1"><i class="fa fa-circle-o"></i> ปี1</a></li>
+                            <li id="overviewSideMenu2"><a href="/index.html?year=2"><i class="fa fa-circle-o"></i> ปี2</a></li>
+                            <li id="overviewSideMenu3"><a href="/index.html?year=3"><i class="fa fa-circle-o"></i> ปี3</a></li>
+                            <li id="overviewSideMenu4"><a href="/index.html?year=4"><i class="fa fa-circle-o"></i> ปี4</a></li>
+                            <li id="overviewSideMenu5"><a href="/index.html?year=5"><i class="fa fa-circle-o"></i> ปีอื่นๆ</a></li>
                         </ul>
                     </li>
                     <!--Overview sidemenu-->
-                    <li class="treeview">
+                    <li class="treeview" id="sideMenuStudent">
                         <!--<a href="detail.html" onclick="location.href='award.html'">-->
                         <a>
                             <i class="fa fa-child"></i> <span>ข้อมูลนิสิต</span>
                             <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="detail.html"><i class="fa fa-circle-o"></i> ทุกชั้นปี</a></li>
-                            <li><a href="detail.html"><i class="fa fa-circle-o"></i> ปี1</a></li>
-                            <li><a href="detail.html"><i class="fa fa-circle-o"></i> ปี2</a></li>
-                            <li><a href="detail.html"><i class="fa fa-circle-o"></i> ปี3</a></li>
-                            <li><a href="detail.html"><i class="fa fa-circle-o"></i> ปี4</a></li>
-                            <li><a href="detail.html"><i class="fa fa-circle-o"></i> ปีอื่นๆ</a></li>
+                            <li><a href="detail.html?year=0&type=normal"><i class="fa fa-circle-o"></i> ทุกชั้นปี</a></li>
+                            <li><a href="detail.html?year=1&type=normal"><i class="fa fa-circle-o"></i> ปี1</a></li>
+                            <li><a href="detail.html?year=2&type=normal"><i class="fa fa-circle-o"></i> ปี2</a></li>
+                            <li><a href="detail.html?year=3&type=normal"><i class="fa fa-circle-o"></i> ปี3</a></li>
+                            <li><a href="detail.html?year=4&type=normal"><i class="fa fa-circle-o"></i> ปี4</a></li>
+                            <li><a href="detail.html?year=5&type=normal"><i class="fa fa-circle-o"></i> ปีอื่นๆ</a></li>
                         </ul>
                     </li>
                     <!--Overview sidemenu-->
-                    <li class="treeview">
+                    <li class="treeview" id="sideMenuAchievement">
                         <a href="#">
                             <i class="fa fa-star-o"></i> <span>ผลงานการแข่งขัน</span>
                             <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ทุกชั้นปี</a></li>
-                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี1</a></li>
-                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี2</a></li>
-                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี3</a></li>
-                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี4</a></li>
-                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปีอื่นๆ</a></li>
+                            <li><a href="reward.html?num=0"><i class="fa fa-circle-o"></i> ทุกชั้นปี</a></li>
+                            <li><a href="reward.html?num=0"><i class="fa fa-circle-o"></i> ปี1</a></li>
+                            <li><a href="reward.html?num=0"><i class="fa fa-circle-o"></i> ปี2</a></li>
+                            <li><a href="reward.html?num=0"><i class="fa fa-circle-o"></i> ปี3</a></li>
+                            <li><a href="reward.html?num=0"><i class="fa fa-circle-o"></i> ปี4</a></li>
+                            <li><a href="reward.html?num=0"><i class="fa fa-circle-o"></i> ปีอื่นๆ</a></li>
                         </ul>
                     </li>
                     <!--Overview sidemenu-->
-                    <li class="treeview" onclick="location.href='subject.html'">
-                        <a href="#">
+                    <li class="treeview" id="sideMenuSubject">
+                        <a href="subject.html">
                             <i class="fa fa-book"></i> <span>รายละเอียดของภาควิชา</span>
                             <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                         </a>
@@ -192,7 +192,7 @@ desired effect
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <section class="content-header">
-                <h1>
+                <h1 id="pageDescription">
                     ภาพรวม
                     <small></small>
                 </h1>
@@ -210,7 +210,7 @@ desired effect
                     <!-- small box -->
                     <div class="small-box bg-green col-xs-3">
                         <div class="inner">
-                            <h3 id="numberOfStudent">150</h3>
+                            <h3 id="numberOfStudent">0</h3>
 
                             <p>นิสิต</p>
                         </div>
@@ -234,7 +234,7 @@ desired effect
                     <!-- small box -->
                     <div class="small-box bg-red col-xs-3">
                         <div class="inner">
-                            <h3 id="numberOfProbatedStudent">5</h3>
+                            <h3 id="numberOfProbatedStudent">0</h3>
 
                             <p>Under Probation</p>
                         </div>
@@ -246,7 +246,7 @@ desired effect
                     <!-- small box -->
                     <div class="small-box bg-aqua col-xs-3">
                         <div class="inner">
-                            <h3 id="numberOfExchangeStudent">1</h3>
+                            <h3 id="numberOfExchangeStudent">0</h3>
 
                             <p>Exchage</p>
                         </div>
@@ -258,7 +258,7 @@ desired effect
                     <!-- small box -->
                     <div class="small-box bg-orange col-xs-3">
                         <div class="inner">
-                            <h3 id="numberOfLeavingStudent">2</h3>
+                            <h3 id="numberOfLeavingStudent">0</h3>
 
                             <p>On Leave</p>
                         </div>

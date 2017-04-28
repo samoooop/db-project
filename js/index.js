@@ -71,6 +71,13 @@ function updateOverviewData(year) {
             $("#averageGradeChartDiv").hide();
             $("#indivGradeChartDiv").show();
         }
+        if (year == 0) {
+            $('#pageDescription').text('ภาพรวมของทุกชั้นปี');
+        } else if (year > 4) {
+            $('#pageDescription').text('ภาพรวมของนิสิตปีอื่นๆ (>4)');
+        } else {
+            $('#pageDescription').text('ภาพรวมของนิสิตปี ' + year);
+        }
         // totalChart.clear();
         totalChart.update();
         gradeChart.update();
@@ -80,13 +87,6 @@ function updateOverviewData(year) {
         // console.log(totalChart)
     });
 }
-updateOverviewData(0);
-// console.log("sdasd")
-// $("#numberOfStudent").html(1922)
-// $("#1234").val("200")
-// console.log(getCookie('ID'))
-// document.cookie = "ID=5731037421; username=John Smith; expires=Thu, 18 Dec 2017 12:00:00 UTC;";
-// console.log(getCookie('ID'))
 
 function overviewFunc(v) {
     for (var i = 0; i <= 5; i++) {
@@ -96,3 +96,9 @@ function overviewFunc(v) {
     updateOverviewData(v);
     console.log(v)
 }
+
+var year = getUrlParameter('year');
+if (year === undefined) year = 0;
+$("#sideMenuOverview").addClass("active");
+overviewFunc(year);
+updateOverviewData(year);

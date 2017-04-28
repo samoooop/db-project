@@ -104,7 +104,7 @@ desired effect
                     <div class="pull-left info">
                         <p>Firstname Lastname</p>
                         <!-- Status -->
-                        <a href="#">ผู้บริหารภาควิชา</a>
+                        <a href="#" id="loginRole">ผู้บริหารภาควิชา</a>
                     </div>
                 </div>
                 <!-- search form (Optional) -->
@@ -122,64 +122,65 @@ desired effect
                     <li class="header">HEADER</li>
                     <!-- Optionally, you can add icons to the links -->
                     <!--Overview sidemenu-->
-                    <li class="treeview">
-                        <a href="ภาพรวม.html" onclick="location.href='ภาพรวม.html'">
+                    <li class="treeview" id="sideMenuOverview">
+                        <a href="ภาพรวม.html">
                             <i class="fa fa-bar-chart"></i> <span>ภาพรวม</span>
                             <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                         </a>
                         <ul class="treeview-menu">
-                            <li id="overviewSideMenu0" class="active"><a onclick="overviewFunc(0)"><i class="fa fa-circle-o active"></i> ทุกชั้นปี</a></li>
-                            <li id="overviewSideMenu1"><a onclick="overviewFunc(1)"><i class="fa fa-circle-o"></i> ปี1</a></li>
-                            <li id="overviewSideMenu2"><a onclick="overviewFunc(2)"><i class="fa fa-circle-o"></i> ปี2</a></li>
-                            <li id="overviewSideMenu3"><a onclick="overviewFunc(3)"><i class="fa fa-circle-o"></i> ปี3</a></li>
-                            <li id="overviewSideMenu4"><a onclick="overviewFunc(4)"><i class="fa fa-circle-o"></i> ปี4</a></li>
-                            <li id="overviewSideMenu5"><a onclick="overviewFunc(5)"><i class="fa fa-circle-o"></i> ปีอื่นๆ</a></li>
+                            <li id="overviewSideMenu0"><a href="/index.html?year=0"><i class="fa fa-circle-o active"></i> ทุกชั้นปี</a></li>
+                            <li id="overviewSideMenu1"><a href="/index.html?year=1"><i class="fa fa-circle-o"></i> ปี1</a></li>
+                            <li id="overviewSideMenu2"><a href="/index.html?year=2"><i class="fa fa-circle-o"></i> ปี2</a></li>
+                            <li id="overviewSideMenu3"><a href="/index.html?year=3"><i class="fa fa-circle-o"></i> ปี3</a></li>
+                            <li id="overviewSideMenu4"><a href="/index.html?year=4"><i class="fa fa-circle-o"></i> ปี4</a></li>
+                            <li id="overviewSideMenu5"><a href="/index.html?year=5"><i class="fa fa-circle-o"></i> ปีอื่นๆ</a></li>
                         </ul>
                     </li>
                     <!--Overview sidemenu-->
-                    <li class="treeview active">
-                        <a href="detail.html">
+                    <li class="treeview" id="detailSideMenu">
+                        <!--<a href="detail.html" onclick="location.href='award.html'">-->
+                        <a>
                             <i class="fa fa-child"></i> <span>ข้อมูลนิสิต</span>
                             <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="detail.html"><i class="fa fa-circle-o"></i> ทุกชั้นปี</a></li>
-                            <li><a href="detail.html"><i class="fa fa-circle-o"></i> ปี1</a></li>
-                            <li><a href="detail.html"><i class="fa fa-circle-o"></i> ปี2</a></li>
-                            <li><a href="detail.html"><i class="fa fa-circle-o"></i> ปี3</a></li>
-                            <li><a href="detail.html"><i class="fa fa-circle-o"></i> ปี4</a></li>
-                            <li><a href="detail.html"><i class="fa fa-circle-o"></i> ปีอื่นๆ</a></li>
+                            <li id="detailSideMenu0"><a href="detail.html?year=0&type=all"><i class="fa fa-circle-o"></i> ทุกชั้นปี</a></li>
+                            <li id="detailSideMenu1"><a href="detail.html?year=1&type=all"><i class="fa fa-circle-o"></i> ปี1</a></li>
+                            <li id="detailSideMenu2"><a href="detail.html?year=2&type=all"><i class="fa fa-circle-o"></i> ปี2</a></li>
+                            <li id="detailSideMenu3"><a href="detail.html?year=3&type=all"><i class="fa fa-circle-o"></i> ปี3</a></li>
+                            <li id="detailSideMenu4"><a href="detail.html?year=4&type=all"><i class="fa fa-circle-o"></i> ปี4</a></li>
+                            <li id="detailSideMenu5"><a href="detail.html?year=5&type=all"><i class="fa fa-circle-o"></i> ปีอื่นๆ</a></li>
                         </ul>
                     </li>
                     <!--Overview sidemenu-->
-                    <li class="treeview">
+                    <li class="treeview" id="sideMenuAchievement">
                         <a href="#">
                             <i class="fa fa-star-o"></i> <span>ผลงานการแข่งขัน</span>
                             <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ทุกชั้นปี</a></li>
-                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี1</a></li>
-                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี2</a></li>
-                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี3</a></li>
-                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี4</a></li>
-                            <li><a href="index.html"><i class="fa fa-circle-o"></i> ปีอื่นๆ</a></li>
+                            <li><a href="reward.html?num=0"><i class="fa fa-circle-o"></i> ทุกชั้นปี</a></li>
+                            <li><a href="reward.html?num=0"><i class="fa fa-circle-o"></i> ปี1</a></li>
+                            <li><a href="reward.html?num=0"><i class="fa fa-circle-o"></i> ปี2</a></li>
+                            <li><a href="reward.html?num=0"><i class="fa fa-circle-o"></i> ปี3</a></li>
+                            <li><a href="reward.html?num=0"><i class="fa fa-circle-o"></i> ปี4</a></li>
+                            <li><a href="reward.html?num=0"><i class="fa fa-circle-o"></i> ปีอื่นๆ</a></li>
                         </ul>
                     </li>
                     <!--Overview sidemenu-->
-                    <li class="treeview">
-                        <a href="#">
+                    <li class="treeview" id="sideMenuSubject">
+                        <a href="subject.html">
                             <i class="fa fa-book"></i> <span>รายละเอียดของภาควิชา</span>
                             <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                         </a>
-                        <ul class="treeview-menu">
+                        <!--<ul class="treeview-menu">
                             <li><a href="index.html"><i class="fa fa-circle-o"></i> ทุกชั้นปี</a></li>
                             <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี1</a></li>
                             <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี2</a></li>
                             <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี3</a></li>
                             <li><a href="index.html"><i class="fa fa-circle-o"></i> ปี4</a></li>
                             <li><a href="index.html"><i class="fa fa-circle-o"></i> ปีอื่นๆ</a></li>
-                        </ul>
+                        </ul>-->
                     </li>
                 </ul>
                 <!-- /.sidebar-menu -->
@@ -209,11 +210,10 @@ desired effect
                                             <th>เกรดเฉลี่ย</th>
                                             <th>ผลงาน</th>
                                             <th>สถานะ</th>
-                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <!--<tr>
                                             <td>5730000021</td>
                                             <td>AAA
                                             </td>
@@ -261,7 +261,7 @@ desired effect
                                             <td>0</td>
                                             <td><span class="label label-danger">pro</span></td>
                                             <td><a href="studentDetail.html"><span class="label label-info">Detail</span></a></td>
-                                        </tr>
+                                        </tr>-->
                                 </table>
                             </div>
                             <!-- /.box-body -->
@@ -307,12 +307,15 @@ desired effect
     <script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/chartjsGlobalSetting.js"></script>
+    <script src="js/defaultScript.js"></script>
 
-    <script>
+    <script src="js/detail.js"></script>
+
+    <!--<script>
         $(function() {
             $("#studentTable").DataTable();
         });
-    </script>
+    </script>-->
 
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the

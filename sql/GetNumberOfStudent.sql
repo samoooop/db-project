@@ -1,1 +1,1 @@
-select year(student.since) as year,count(student.sid) as result from student group by year(student.since);
+select student.entry_year as year,count(student.sid) as result from student group by student.entry_year;

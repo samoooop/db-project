@@ -47,7 +47,8 @@ app.get('/index', function(req, res) {
     console.log("requested " + req.cookies);
     // var connection = mysql.createConnection(dbconfig);
     // connection.connect();
-    promises = []
+    console.log('index');
+    promises = [];
     promises.push(query.getNumberOfStudent(req.cookie.id));
     promises.push(query.getNumberOfProbatedStudent(req.cookie.id));
     promises.push(query.getNumberOfExchangeStudent(req.cookie.id))
@@ -56,18 +57,47 @@ app.get('/index', function(req, res) {
     promises.push(query.getNumberOfReward(req.cookie.id));
     Promise.all(promises).then(result => {
         var response = {
-            // [1st,2nd,3rd,4th,other]
-            numberOfStudent: result[0],
-            numberOfFineStudent: result[0].map((x, idx) => x - result[1][idx] - result[3][idx]),
-            numberOfProbatedStudent: result[1],
-            numberOfExchangeStudent: result[2],
-            numberOfLeavingStudent: result[3],
-            averageGrade: result[4],
-            numberOfReward: result[5],
-        }
-        console.log(response);
+                // [1st,2nd,3rd,4th,other]
+                numberOfStudent: result[0],
+                numberOfFineStudent: result[0].map((x, idx) => x - result[1][idx] - result[3][idx]),
+                numberOfProbatedStudent: result[1],
+                numberOfExchangeStudent: result[2],
+                numberOfLeavingStudent: result[3],
+                averageGrade: result[4],
+                numberOfReward: result[5],
+            }
+            // console.log(response);
         res.send(response);
     });
+});
+
+app.post('/detail', function(req, res) {
+    var year = req.body.year;
+    var type = req.body.type;
+    var promises = [];
+    switch (type) {
+        case 'normal':
+            break;
+        case 'exchage':
+            break;
+        case 'probated':
+            break;
+        case 'leaving':
+            break;
+        default:
+            promises.push(query.getStudentListAll());
+            promises.push(query.getProbatedStudentList());
+            promises.push(query.getLeavingStudentList());
+            promises.push(query.getExchangeStudentList());
+            break;
+    }
+    Promise.all(promises).then(result => {
+        //filter student by entry year
+        // result.map((arr) => { arr.filter() });
+        console.log(result);
+        res.send(result);
+    });
+    // res.send('dummy');
 });
 
 app.get('/whoami', function(req, res) {

@@ -1,4 +1,4 @@
-var year = 2016;
+var year = 2559;
 var mysql = require('mysql');
 var fs = require('fs');
 var q = require('./sqlLoader.js');
@@ -85,6 +85,55 @@ exports.getNumberOfExchangeStudent = function(ID) {
         });
     });
 }
+
+exports.getStudentListAll = function(ID) {
+    return new Promise(function(resolve, reject) {
+        // console.log('query by ' + ID);
+        // console.log(q.queryString.numberOfLeavingStudent);
+        pool.query(q.queryString.getStudentListAll, function(err, result, field) {
+            // console.log(result);   
+            if (err) return reject(err);
+            return resolve(result);
+        });
+    });
+}
+
+exports.getProbatedStudentList = function(ID) {
+    return new Promise(function(resolve, reject) {
+        // console.log('query by ' + ID);
+        console.log(q.queryString.getProbatedStudentList);
+        pool.query(q.queryString.getProbatedStudentList, function(err, result, field) {
+            // console.log(result);   
+            if (err) return reject(err);
+            return resolve(result);
+        });
+    });
+}
+
+exports.getLeavingStudentList = function(ID) {
+    return new Promise(function(resolve, reject) {
+        // console.log('query by ' + ID);
+        console.log(q.queryString.getProbatedStudentList);
+        pool.query(q.queryString.getLeavingStudentList, function(err, result, field) {
+            // console.log(result);   
+            if (err) return reject(err);
+            return resolve(result);
+        });
+    });
+}
+
+exports.getExchangeStudentList = function(ID) {
+    return new Promise(function(resolve, reject) {
+        // console.log('query by ' + ID);
+        console.log(q.queryString.getProbatedStudentList);
+        pool.query(q.queryString.getExchangeStudentList, function(err, result, field) {
+            // console.log(result);   
+            if (err) return reject(err);
+            return resolve(result);
+        });
+    });
+}
+
 
 
 function mapToResult(result) {

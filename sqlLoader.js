@@ -7,4 +7,8 @@ exports.queryString = {
     numberOfProbatedStudent: fs.readFileSync('sql/GetNumberOfProbatedStudent.sql', 'utf8'),
     numberOfLeavingStudent: fs.readFileSync('sql/GetNumberOfLeavingStudent.sql', 'utf8'),
     numberOfExchangeStudent: fs.readFileSync('sql/GetNumberOfExchangeStudent.sql', 'utf8'),
+    getStudentListAll: fs.readFileSync('sql/GetStudentListAll.sql', 'utf8'),
+    getProbatedStudentList: fs.readFileSync('sql/GetProbatedStudentList.sql', 'utf8'),
+    getLeavingStudentList: fs.readFileSync('sql/GetLeavingStudentList.sql', 'utf8'),
+    getExchangeStudentList: fs.readFileSync('sql/GetExchangeStudentList.sql', 'utf8'),
 }
