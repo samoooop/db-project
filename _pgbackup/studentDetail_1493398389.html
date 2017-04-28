@@ -208,7 +208,7 @@ desired effect
                     </li>
                 </ul>
                 <!-- /.sidebar-menu -->
-            </section>               
+            </section>    
             <!-- /.sidebar -->
         </aside>
 
@@ -217,80 +217,11 @@ desired effect
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    รายชื่อนิสิต
+                    ข้อมูลนิสิต AAA AAA
                     <small></small>
                 </h1>
                 <div class="row">
                     <div class="col-xs-12">
-                        <div class="box">
-                            <!-- /.box-header -->
-                            <div class="box-body">
-                                <table id="studentTable" class="table table-bordered table-striped table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>รหัสนิสิต</th>
-                                            <th>ชื่อ</th>
-                                            <th>นามสกุล</th>
-                                            <th>เกรดเฉลี่ย</th>
-                                            <th>ผลงาน</th>
-                                            <th>สถานะ</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>5730000021</td>
-                                            <td>AAA
-                                            </td>
-                                            <td>AAA</td>
-                                            <td>3.4</td>
-                                            <td>0</td>
-                                            <td><span class="label label-success">ปกติ</span></td>
-                                            <td><a href="studentDetail.html"><span class="label label-info">Detail</span></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>5730000121</td>
-                                            <td>BBB
-                                            </td>
-                                            <td>BBB</td>
-                                            <td>3.5</td>
-                                            <td>0</td>
-                                            <td><span class="label label-success">ปกติ</span></td>
-                                            <td><a href="studentDetail.html"><span class="label label-info">Detail</span></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>5730000221</td>
-                                            <td>CCC
-                                            </td>
-                                            <td>CCC</td>
-                                            <td>3.1</td>
-                                            <td>0</td>
-                                            <td><span class="label label-success">ปกติ</span></td>
-                                            <td><a href="studentDetail.html"><span class="label label-info">Detail</span></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>5730000321</td>
-                                            <td>DDD
-                                            </td>
-                                            <td>CCC</td>
-                                            <td>2.1</td>
-                                            <td>3</td>
-                                            <td><span class="label label-warning">exchange</span></td>
-                                            <td><a href="studentDetail.html"><span class="label label-info">Detail</span></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>5730000421</td>
-                                            <td>EEE</td>
-                                            <td>EEE</td>
-                                            <td>1.5</td>
-                                            <td>0</td>
-                                            <td><span class="label label-danger">pro</span></td>
-                                            <td><a href="studentDetail.html"><span class="label label-info">Detail</span></a></td>
-                                        </tr>
-                                </table>
-                            </div>
-                            <!-- /.box-body -->
-                        </div>
                         <!-- /.box -->
                     </div>
                     <!-- /.col -->
@@ -299,7 +230,117 @@ desired effect
 
             <!-- Main content -->
             <section class="content">
+                <div class=row>
+                    <div class="col-xs-8">
+                        <div class="box box-solid">
+                            <div class="box-header">
+                                <i class="fa fa-th"></i>
 
+                                <h3 class="box-title">ข้อมูลนิสิต</h3>
+
+                                <div class="box-tools pull-right">
+                                    <button type="button" class="btn btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                    <button type="button" class="btn bg-red btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                                </div>
+                            </div>
+                            <div class="box-body border-radius-none">
+                                <canvas id="totalChart" width="400" height="300"></canvas>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="box box-solid">
+                            <div class="box-header">
+                                <i class="fa fa-th"></i>
+
+                                <h3 class="box-title">Activities</h3>
+
+                                <div class="box">
+                                    <!-- /.box-header -->
+                                    <div class="box-body">
+                                        <table id="activityTable" class="table table-bordered table-striped table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>ชื่อกิจกรรม</th>
+                                                    <th>จำนวนชั่วโมง</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>DB MGT SYS DESIGN</td>
+                                                    <td>10</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DB MGT SYS DESIGN</td>
+                                                    <td>10</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DB MGT SYS DESIGN</td>
+                                                    <td>10</td>
+                                                </tr>
+
+                                        </table>
+                                    </div>
+                                    <!-- /.box-body -->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="box box-solid">
+                            <div class="box-header">
+                                <i class="fa fa-th"></i>
+
+                                <h3 class="box-title">Registered Courses</h3>
+
+                                <div class="box">
+                                    <!-- /.box-header -->
+                                    <div class="box-body">
+                                        <table id="studentTable" class="table table-bordered table-striped table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>รหัสวิชา</th>
+                                                    <th>ชื่อวิชา</th>
+                                                    <th>เกรด</th>
+                                                    <th>เทอมที่ลง</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>2110422</td>
+                                                    <td>DB MGT SYS DESIGN</td>
+                                                    <td>X</td>
+                                                    <td>2016/1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2110422</td>
+                                                    <td>DB MGT SYS DESIGN</td>
+                                                    <td>X</td>
+                                                    <td>2016/2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2110422</td>
+                                                    <td>DB MGT SYS DESIGN</td>
+                                                    <td>X</td>
+                                                    <td>2017/1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2110422</td>
+                                                    <td>DB MGT SYS DESIGN</td>
+                                                    <td>X</td>
+                                                    <td>2017/2</td>
+                                                </tr>
+                                        </table>
+                                    </div>
+                                    <!-- /.box-body -->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </section>
             <!-- /.content -->
@@ -338,6 +379,12 @@ desired effect
             $("#studentTable").DataTable();
         });
     </script>
+    <script>
+        $(function() {
+            $("#activityTable").DataTable();
+        });
+    </script>
+
 
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
