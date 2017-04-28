@@ -86,10 +86,10 @@ app.post('/detail', function(req, res) {
     console.log(byear, eyear);
     var promises = [];
 
-    promises.push(query.getStudentListAll(1, byear, eyear));
-    promises.push(query.getProbatedStudentList(1, byear, eyear));
-    promises.push(query.getLeavingStudentList(1, byear, eyear));
-    promises.push(query.getExchangeStudentList(1, byear, eyear));
+    promises.push(query.getStudentListAll(req.cookie.id, byear, eyear));
+    promises.push(query.getProbatedStudentList(req.cookie.id, byear, eyear));
+    promises.push(query.getLeavingStudentList(req.cookie.id, byear, eyear));
+    promises.push(query.getExchangeStudentList(req.cookie.id, byear, eyear));
     Promise.all(promises).then(result => {
         switch (type) {
             case 'normal':
@@ -127,6 +127,7 @@ app.post('/detail', function(req, res) {
 
 app.get('/whoami', function(req, res) {
     console.log('whoami');
+    console.log('using as ' + req.cookie.id);
     if (req.cookie.id === undefined) {
         console.log('not found');
         res.send({

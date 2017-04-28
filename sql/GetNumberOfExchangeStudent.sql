@@ -4,5 +4,6 @@ where student.sid = take_leave.l_sid
     and take_leave.until > current_date() 
     and take_leave.since < current_date() 
     and take_leave.leave_type = "Exchange"
+    and student.tid = ?
 group by student.entry_year
 ;

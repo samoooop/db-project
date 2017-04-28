@@ -6,5 +6,6 @@ from student , (select sum((sem_consist_course.grade * course.credit))/sum(cours
 				group by student.sid) AS Grade
                 
 where Grade.GPAX < 2 and student.sid = Grade.Psid
+	and student.tid = ?
 group by student.entry_year;
 ;
