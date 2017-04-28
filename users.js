@@ -2,7 +2,12 @@ var records = [{
     id: '2110000004',
     username: '2110000004',
     password: 'password',
-    type: 'instructor',
+    role: 'Instructor',
+}, {
+    id: '1110000004',
+    username: '2110000004',
+    password: 'password',
+    role: 'Manager',
 }];
 
 exports.isOkay = function(id, pass) {
@@ -23,6 +28,15 @@ exports.findById = function(id, cb) {
             cb(new Error('User ' + id + ' does not exist'));
         }
     });
+}
+
+exports.getRole = function(id) {
+    for (var i = 0; i < records.length; i++) {
+        if (records[i].id == id) {
+            return records[i].role;
+        }
+    }
+    return 'Unknown';
 }
 
 exports.findByUsername = function(username, cb) {
