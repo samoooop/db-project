@@ -79,7 +79,7 @@ function addDataToTable(res) {
     addToTable('FINE', res[0]);
     addToTable('PROBATED', res[1]);
     addToTable('LEAVING', res[2]);
-
+    addToTable('EXCHANGE', res[3]);
     // document.getElementById('statusBtn'+5530000321);
 }
 

@@ -89,6 +89,11 @@ function updateOverviewData(year) {
 }
 
 function overviewFunc(v) {
+    $('#personAll').attr('href', '/detail.html?year=' + v + '&type=all');
+    $('#personProbated').attr('href', '/detail.html?year=' + v + '&type=probated');
+    $('#personExchange').attr('href', '/detail.html?year=' + v + '&type=exchange');
+    $('#personLeaving').attr('href', '/detail.html?year=' + v + '&type=leaving');
+
     for (var i = 0; i <= 5; i++) {
         $("#overviewSideMenu" + i).removeClass("active");
     }

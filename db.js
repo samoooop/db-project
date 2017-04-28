@@ -74,26 +74,51 @@ app.get('/index', function(req, res) {
 app.post('/detail', function(req, res) {
     var year = req.body.year;
     var type = req.body.type;
-    var promises = [];
-    switch (type) {
-        case 'normal':
-            break;
-        case 'exchage':
-            break;
-        case 'probated':
-            break;
-        case 'leaving':
-            break;
-        default:
-            promises.push(query.getStudentListAll());
-            promises.push(query.getProbatedStudentList());
-            promises.push(query.getLeavingStudentList());
-            promises.push(query.getExchangeStudentList());
-            break;
+    var byear = parseInt(year) - 1;
+    var eyear = parseInt(year) - 1;
+    if (byear < 0) {
+        byear = 999;
+        eyear = -999;
+    } else if (byear >= 4) {
+        byear = 999;
+        eyear = 4;
     }
+    console.log(byear, eyear);
+    var promises = [];
+
+    promises.push(query.getStudentListAll(1, byear, eyear));
+    promises.push(query.getProbatedStudentList(1, byear, eyear));
+    promises.push(query.getLeavingStudentList(1, byear, eyear));
+    promises.push(query.getExchangeStudentList(1, byear, eyear));
     Promise.all(promises).then(result => {
+        switch (type) {
+            case 'normal':
+                result[1] = [];
+                result[2] = [];
+                result[3] = [];
+                break;
+            case 'exchage':
+                result[0] = [];
+                result[1] = [];
+                result[2] = [];
+                break;
+            case 'probated':
+                result[0] = [];
+                result[2] = [];
+                result[3] = [];
+                break;
+            case 'leaving':
+                result[0] = [];
+                result[1] = [];
+                result[3] = [];
+                break;
+            default:
+                break;
+        }
         //filter student by entry year
-        // result.map((arr) => { arr.filter() });
+        // result.map((arr) => { arr.filter((x)=>{
+        //     return x.entry_year == year+1;
+        // }) });
         console.log(result);
         res.send(result);
     });

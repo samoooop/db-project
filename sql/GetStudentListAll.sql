@@ -13,6 +13,6 @@ from (student s left join got_reward g on s.sid = g.studentid),
                                 where sem_consist_course.status = 'P'
 					group by student.sid) AS Grade	
 where
-		Grade.GPAX >= 2 and s.sid = Grade.Psid
+		Grade.GPAX >= 2 and s.sid = Grade.Psid and s.entry_year >= ? and s.entry_year <= ?
 group by sid
 ;

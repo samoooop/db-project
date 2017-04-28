@@ -86,11 +86,11 @@ exports.getNumberOfExchangeStudent = function(ID) {
     });
 }
 
-exports.getStudentListAll = function(ID) {
+exports.getStudentListAll = function(ID, begin, end) {
     return new Promise(function(resolve, reject) {
         // console.log('query by ' + ID);
         // console.log(q.queryString.numberOfLeavingStudent);
-        pool.query(q.queryString.getStudentListAll, function(err, result, field) {
+        pool.query(q.queryString.getStudentListAll, [year - begin, year - end], function(err, result, field) {
             // console.log(result);   
             if (err) return reject(err);
             return resolve(result);
@@ -98,11 +98,11 @@ exports.getStudentListAll = function(ID) {
     });
 }
 
-exports.getProbatedStudentList = function(ID) {
+exports.getProbatedStudentList = function(ID, begin, end) {
     return new Promise(function(resolve, reject) {
         // console.log('query by ' + ID);
         console.log(q.queryString.getProbatedStudentList);
-        pool.query(q.queryString.getProbatedStudentList, function(err, result, field) {
+        pool.query(q.queryString.getProbatedStudentList, [year - begin, year - end], function(err, result, field) {
             // console.log(result);   
             if (err) return reject(err);
             return resolve(result);
@@ -110,11 +110,11 @@ exports.getProbatedStudentList = function(ID) {
     });
 }
 
-exports.getLeavingStudentList = function(ID) {
+exports.getLeavingStudentList = function(ID, begin, end) {
     return new Promise(function(resolve, reject) {
         // console.log('query by ' + ID);
         console.log(q.queryString.getProbatedStudentList);
-        pool.query(q.queryString.getLeavingStudentList, function(err, result, field) {
+        pool.query(q.queryString.getLeavingStudentList, [year - begin, year - end], function(err, result, field) {
             // console.log(result);   
             if (err) return reject(err);
             return resolve(result);
@@ -122,11 +122,11 @@ exports.getLeavingStudentList = function(ID) {
     });
 }
 
-exports.getExchangeStudentList = function(ID) {
+exports.getExchangeStudentList = function(ID, begin, end) {
     return new Promise(function(resolve, reject) {
         // console.log('query by ' + ID);
         console.log(q.queryString.getProbatedStudentList);
-        pool.query(q.queryString.getExchangeStudentList, function(err, result, field) {
+        pool.query(q.queryString.getExchangeStudentList, [year - begin, year - end], function(err, result, field) {
             // console.log(result);   
             if (err) return reject(err);
             return resolve(result);
