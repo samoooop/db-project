@@ -163,12 +163,18 @@ app.get('/whoami', function(req, res) {
                 });
             } else {
                 if (result.manage_mid !== '') {
+                    req.cookie.role = 'Instructor';
                     res.send({
                         whoami: 'Instructor',
+                        id: req.cookie.id,
                     });
                 } else {
+                    req.cookie.role = 'Manager';
+                    req.cookie.mid = result.manage_mid;
                     res.send({
                         whoami: 'Manager',
+                        id: req.cookie.id,
+                        mid: req.cookie.mid,
                     });
                 }
             }
