@@ -158,6 +158,18 @@ exports.getStudentActivity = function(sid) {
     });
 }
 
+exports.isATeacher = function(tid) {
+    return new Promise(function(resolve, reject) {
+        // console.log('query by ' + ID);
+        // console.log(q.queryString.getProbatedStudentList);
+        pool.query(q.queryString.isATeacher, [tid], function(err, result, field) {
+            // console.log(result);   
+            if (err) return reject(err);
+            return resolve(result);
+        });
+    });
+}
+
 
 function mapToResult(result) {
     var totalStudent = 0;

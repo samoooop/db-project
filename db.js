@@ -154,11 +154,30 @@ app.get('/whoami', function(req, res) {
             whoami: 'unknown',
         });
     } else {
-        var whoami = users.getRole(req.cookie.id);
-        console.log('whoami : ', whoami)
-        res.send({
-            whoami: whoami,
+        var p = query.isATeacher(req.cookie.id);
+        p.then(result => {
+            // console.log('whoami ' + result[0].manage_mid);
+            if (result.length == 0) {
+                res.send({
+                    whoami: 'unknown',
+                });
+            } else {
+                if (result.manage_mid !== '') {
+                    res.send({
+                        whoami: 'Instructor',
+                    });
+                } else {
+                    res.send({
+                        whoami: 'Manager',
+                    });
+                }
+            }
         });
+        // var whoami = users.getRole(req.cookie.id);
+        // console.log('whoami : ', whoami)
+        // res.send({
+        //     whoami: whoami,
+        // });
     }
 });
 
