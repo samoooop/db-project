@@ -101,7 +101,7 @@ exports.getStudentListAll = function(ID, begin, end) {
 exports.getProbatedStudentList = function(ID, begin, end) {
     return new Promise(function(resolve, reject) {
         // console.log('query by ' + ID);
-        console.log(q.queryString.getProbatedStudentList);
+        // console.log(q.queryString.getProbatedStudentList);
         pool.query(q.queryString.getProbatedStudentList, [year - begin, year - end, ID], function(err, result, field) {
             // console.log(result);   
             if (err) return reject(err);
@@ -113,7 +113,7 @@ exports.getProbatedStudentList = function(ID, begin, end) {
 exports.getLeavingStudentList = function(ID, begin, end) {
     return new Promise(function(resolve, reject) {
         // console.log('query by ' + ID);
-        console.log(q.queryString.getProbatedStudentList);
+        // console.log(q.queryString.getProbatedStudentList);
         pool.query(q.queryString.getLeavingStudentList, [year - begin, year - end, ID], function(err, result, field) {
             // console.log(result);   
             if (err) return reject(err);
@@ -125,7 +125,7 @@ exports.getLeavingStudentList = function(ID, begin, end) {
 exports.getExchangeStudentList = function(ID, begin, end) {
     return new Promise(function(resolve, reject) {
         // console.log('query by ' + ID);
-        console.log(q.queryString.getProbatedStudentList);
+        // console.log(q.queryString.getProbatedStudentList);
         pool.query(q.queryString.getExchangeStudentList, [year - begin, year - end, ID], function(err, result, field) {
             // console.log(result);   
             if (err) return reject(err);
@@ -134,6 +134,29 @@ exports.getExchangeStudentList = function(ID, begin, end) {
     });
 }
 
+exports.getStudentDetail = function(tid, sid) {
+    return new Promise(function(resolve, reject) {
+        // console.log('query by ' + ID);
+        // console.log(q.queryString.getProbatedStudentList);
+        pool.query(q.queryString.getStudentDetail, [tid, sid], function(err, result, field) {
+            // console.log(result);   
+            if (err) return reject(err);
+            return resolve(result);
+        });
+    });
+}
+
+exports.getStudentActivity = function(sid) {
+    return new Promise(function(resolve, reject) {
+        // console.log('query by ' + ID);
+        // console.log(q.queryString.getProbatedStudentList);
+        pool.query(q.queryString.getStudentActivity, [sid], function(err, result, field) {
+            // console.log(result);   
+            if (err) return reject(err);
+            return resolve(result);
+        });
+    });
+}
 
 
 function mapToResult(result) {

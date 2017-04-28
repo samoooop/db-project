@@ -11,4 +11,6 @@ exports.queryString = {
     getProbatedStudentList: fs.readFileSync('sql/GetProbatedStudentList.sql', 'utf8'),
     getLeavingStudentList: fs.readFileSync('sql/GetLeavingStudentList.sql', 'utf8'),
     getExchangeStudentList: fs.readFileSync('sql/GetExchangeStudentList.sql', 'utf8'),
+    getStudentDetail: fs.readFileSync('sql/GetStudentDetail.sql', 'utf8'),
+    getStudentActivity: fs.readFileSync('sql/GetStudentActivity.sql', 'utf8'),
 }

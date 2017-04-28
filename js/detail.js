@@ -63,6 +63,7 @@ function addDataToTable(res) {
             function gen(sid) {
                 var x = sid;
                 return function() {
+                    window.location.replace("/studentDetail.html?id=" + x);
                     console.log(x);
                 }
             }

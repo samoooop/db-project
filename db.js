@@ -125,6 +125,26 @@ app.post('/detail', function(req, res) {
     // res.send('dummy');
 });
 
+app.post('/studentDetail', function(req, res) {
+    var sid = req.body.sid;
+    // var tid = req.cookie.id;
+    var p = query.getStudentDetail(sid);
+    p.then(result => {
+        console.log(result);
+        res.send(result);
+    });
+});
+
+app.post('/studentActivity', function(req, res) {
+    var sid = req.body.sid;
+    // var tid = req.cookie.id;
+    var p = query.getStudentActivity(sid);
+    p.then(result => {
+        console.log(result);
+        res.send(result);
+    });
+});
+
 app.get('/whoami', function(req, res) {
     console.log('whoami');
     console.log('using as ' + req.cookie.id);
