@@ -55,6 +55,9 @@ function addDataToTable(res) {
                 student.last_name,
                 parseFloat(Math.round(student.gpax * 100) / 100).toFixed(2),
                 student.rewardAmount,
+                student.enYear,
+                student.tid,
+                student.mid,
                 BTN[status],
             ]).draw(false);
             // rows[i + 1].id = student.sid;

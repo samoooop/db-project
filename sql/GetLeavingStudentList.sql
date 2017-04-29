@@ -1,4 +1,4 @@
-select s.sid ,s.first_name, s.last_name, Grade.GPAX as gpax , count(g.rewardid) as rewardAmount, s.entry_year as enYear
+select s.sid ,s.first_name, s.last_name, Grade.GPAX as gpax , count(g.rewardid) as rewardAmount, s.entry_year as enYear,s.tid as tid,s.mid as mid
 from  student s left join got_reward g on s.sid = g.studentid,take_leave tl,
 (select sum((sem_consist_course.grade*course.credit))/sum(course.credit) AS GPAX, student.sid AS Psid ,sem_consist_course.status as status
 					from ((student inner join semester on student.sid = semester.sem_sid) inner join sem_consist_course 
