@@ -2,6 +2,7 @@ var year = 2559;
 var mysql = require('mysql');
 var fs = require('fs');
 var q = require('./sqlLoader.js');
+var queryString = q.queryStringManager;
 
 var mysql = require('mysql');
 var pool = mysql.createPool({
@@ -19,7 +20,7 @@ exports.getNumberOfStudent = function(ID) {
     return new Promise(function(resolve, reject) {
         // console.log('query by ' + ID);
         // console.log(q.queryString.numberOfStudent);
-        pool.query(q.queryString.numberOfStudent, [ID], function(err, result, field) {
+        pool.query(queryString.numberOfStudent, [ID], function(err, result, field) {
             if (err) return reject(err);
             return resolve(mapToResult(result));
         });
@@ -30,7 +31,7 @@ exports.getAverageGrade = function(ID) {
     return new Promise(function(resolve, reject) {
         // console.log('query by ' + ID);
         // console.log(q.queryString.averageGrade);
-        pool.query(q.queryString.averageGrade, [ID], function(err, result, field) {
+        pool.query(queryString.averageGrade, [ID], function(err, result, field) {
             // console.log(result);
             if (err) return reject(err);
             return resolve(mapToResult(result));
@@ -42,7 +43,7 @@ exports.getNumberOfReward = function(ID) {
     return new Promise(function(resolve, reject) {
         // console.log('query by ' + ID);
         // console.log(q.queryString.numberOfReward);
-        pool.query(q.queryString.numberOfReward, [ID], function(err, result, field) {
+        pool.query(queryString.numberOfReward, [ID], function(err, result, field) {
             // console.log(result);
             if (err) return reject(err);
             return resolve(mapToResult(result));
@@ -54,7 +55,7 @@ exports.getNumberOfProbatedStudent = function(ID) {
     return new Promise(function(resolve, reject) {
         // console.log('query by ' + ID);
         // console.log(q.queryString.numberOfProbatedStudent);
-        pool.query(q.queryString.numberOfProbatedStudent, [ID], function(err, result, field) {
+        pool.query(queryString.numberOfProbatedStudent, [ID], function(err, result, field) {
             // console.log(result);
             if (err) return reject(err);
             return resolve(mapToResult(result));
@@ -66,7 +67,7 @@ exports.getNumberOfLeavingStudent = function(ID) {
     return new Promise(function(resolve, reject) {
         // console.log('query by ' + ID);
         // console.log(q.queryString.numberOfLeavingStudent);
-        pool.query(q.queryString.numberOfLeavingStudent, [ID], function(err, result, field) {
+        pool.query(queryString.numberOfLeavingStudent, [ID], function(err, result, field) {
             console.log(result);
             if (err) return reject(err);
             return resolve(mapToResult(result));
@@ -78,7 +79,7 @@ exports.getNumberOfExchangeStudent = function(ID) {
     return new Promise(function(resolve, reject) {
         // console.log('query by ' + ID);
         // console.log(q.queryString.numberOfLeavingStudent);
-        pool.query(q.queryString.numberOfExchangeStudent, [ID], function(err, result, field) {
+        pool.query(queryString.numberOfExchangeStudent, [ID], function(err, result, field) {
             // console.log(result);
             if (err) return reject(err);
             return resolve(mapToResult(result));
@@ -90,7 +91,7 @@ exports.getStudentListAll = function(ID, begin, end) {
     return new Promise(function(resolve, reject) {
         // console.log('query by ' + ID);
         // console.log(q.queryString.numberOfLeavingStudent);
-        pool.query(q.queryString.getStudentListAll, [year - begin, year - end, ID], function(err, result, field) {
+        pool.query(queryString.getStudentListAll, [year - begin, year - end, ID], function(err, result, field) {
             // console.log(result);   
             if (err) return reject(err);
             return resolve(result);
@@ -102,7 +103,7 @@ exports.getProbatedStudentList = function(ID, begin, end) {
     return new Promise(function(resolve, reject) {
         // console.log('query by ' + ID);
         // console.log(q.queryString.getProbatedStudentList);
-        pool.query(q.queryString.getProbatedStudentList, [year - begin, year - end, ID], function(err, result, field) {
+        pool.query(queryString.getProbatedStudentList, [year - begin, year - end, ID], function(err, result, field) {
             // console.log(result);   
             if (err) return reject(err);
             return resolve(result);
@@ -114,7 +115,7 @@ exports.getLeavingStudentList = function(ID, begin, end) {
     return new Promise(function(resolve, reject) {
         // console.log('query by ' + ID);
         // console.log(q.queryString.getProbatedStudentList);
-        pool.query(q.queryString.getLeavingStudentList, [year - begin, year - end, ID], function(err, result, field) {
+        pool.query(queryString.getLeavingStudentList, [year - begin, year - end, ID], function(err, result, field) {
             // console.log(result);   
             if (err) return reject(err);
             return resolve(result);
@@ -126,7 +127,7 @@ exports.getExchangeStudentList = function(ID, begin, end) {
     return new Promise(function(resolve, reject) {
         // console.log('query by ' + ID);
         // console.log(q.queryString.getProbatedStudentList);
-        pool.query(q.queryString.getExchangeStudentList, [year - begin, year - end, ID], function(err, result, field) {
+        pool.query(queryString.getExchangeStudentList, [year - begin, year - end, ID], function(err, result, field) {
             // console.log(result);   
             if (err) return reject(err);
             return resolve(result);
@@ -138,7 +139,7 @@ exports.getStudentDetail = function(tid, sid) {
     return new Promise(function(resolve, reject) {
         // console.log('query by ' + ID);
         // console.log(q.queryString.getProbatedStudentList);
-        pool.query(q.queryString.getStudentDetail, [tid, sid], function(err, result, field) {
+        pool.query(queryString.getStudentDetail, [tid, sid], function(err, result, field) {
             // console.log(result);   
             if (err) return reject(err);
             return resolve(result);
@@ -162,7 +163,7 @@ exports.getStudentEnrolledCourse = function(sid) {
     return new Promise(function(resolve, reject) {
         // console.log('query by ' + ID);
         // console.log(q.queryString.getProbatedStudentList);
-        pool.query(q.queryString.getStudentEnrolledCourse, [sid], function(err, result, field) {
+        pool.query(queryString.getStudentEnrolledCourse, [sid], function(err, result, field) {
             // console.log(result);   
             if (err) return reject(err);
             return resolve(result);
@@ -174,7 +175,7 @@ exports.getStudentRewardList = function(byear, eyear, tid) {
     return new Promise(function(resolve, reject) {
         // console.log('query by ' + ID);
         // console.log(q.queryString.getProbatedStudentList);
-        pool.query(q.queryString.getStudentRewardList, [byear, eyear, tid], function(err, result, field) {
+        pool.query(queryString.getStudentRewardList, [byear, eyear, tid], function(err, result, field) {
             // console.log(result);   
             if (err) return reject(err);
             return resolve(result);
@@ -186,7 +187,7 @@ exports.getRequireNotRegist = function(sid) {
     return new Promise(function(resolve, reject) {
         // console.log('query by ' + ID);
         // console.log(q.queryString.getProbatedStudentList);
-        pool.query(q.queryString.getRequireNotRegist, [sid, sid], function(err, result, field) {
+        pool.query(queryString.getRequireNotRegist, [sid, sid], function(err, result, field) {
             // console.log(result);   
             if (err) return reject(err);
             return resolve(result);
@@ -199,7 +200,7 @@ exports.getRequireRegistOutOfTime = function(sid) {
     return new Promise(function(resolve, reject) {
         // console.log('query by ' + ID);
         // console.log(q.queryString.getProbatedStudentList);
-        pool.query(q.queryString.getRequireRegistOutOfTime, [sid, sid, sid], function(err, result, field) {
+        pool.query(queryString.getRequireRegistOutOfTime, [sid, sid, sid], function(err, result, field) {
             // console.log(result);   
             if (err) return reject(err);
             return resolve(result);
@@ -211,7 +212,7 @@ exports.getAllSubjectInMajor = function(tid) {
     return new Promise(function(resolve, reject) {
         // console.log('query by ' + ID);
         // console.log(q.queryString.getProbatedStudentList);
-        pool.query(q.queryString.getAllSubjectInMajor, [tid], function(err, result, field) {
+        pool.query(queryString.getAllSubjectInMajor, [tid], function(err, result, field) {
             // console.log(result);   
             if (err) return reject(err);
             return resolve(result);
@@ -224,7 +225,7 @@ exports.isATeacher = function(tid) {
     return new Promise(function(resolve, reject) {
         // console.log('query by ' + ID);
         // console.log(q.queryString.getProbatedStudentList);
-        pool.query(q.queryString.isATeacher, [tid], function(err, result, field) {
+        pool.query(queryString.isATeacher, [tid], function(err, result, field) {
             // console.log(result);   
             if (err) return reject(err);
             return resolve(result);

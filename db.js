@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var async = require('async');
 var users = require('./users.js');
 var query = require('./query.js');
+var mQuery = require('./managerQuery.js');
 
 var app = express()
 app.use(bodyParser.json()); // to support JSON-encoded bodies
@@ -36,6 +37,12 @@ app.all('/auth', function(req, res) {
     res.redirect('/login.html');
 });
 
+app.all('/becomeManager', function(req, res) {
+    req.cookie.role = 'Manager';
+    req.cookie.mid = 2110;
+    res.send('Congrat!');
+});
+
 app.use(express.static("./public"));
 
 app.all('/logout', function(req, res) {
@@ -44,17 +51,20 @@ app.all('/logout', function(req, res) {
 });
 
 app.get('/index', function(req, res) {
-    console.log("requested " + req.cookies);
+    var r = getIDAndQuery(req);
+    var id = r.id,
+        q = r.q;
+    // console.log("requested " + req.cookies);
     // var connection = mysql.createConnection(dbconfig);
     // connection.connect();
-    console.log('index');
+    // console.log('index');
     promises = [];
-    promises.push(query.getNumberOfStudent(req.cookie.id));
-    promises.push(query.getNumberOfProbatedStudent(req.cookie.id));
-    promises.push(query.getNumberOfExchangeStudent(req.cookie.id))
-    promises.push(query.getNumberOfLeavingStudent(req.cookie.id));
-    promises.push(query.getAverageGrade(req.cookie.id));
-    promises.push(query.getNumberOfReward(req.cookie.id));
+    promises.push(q.getNumberOfStudent(id));
+    promises.push(q.getNumberOfProbatedStudent(id));
+    promises.push(q.getNumberOfExchangeStudent(id))
+    promises.push(q.getNumberOfLeavingStudent(id));
+    promises.push(q.getAverageGrade(id));
+    promises.push(q.getNumberOfReward(id));
     Promise.all(promises).then(result => {
         var response = {
                 // [1st,2nd,3rd,4th,other]
@@ -72,6 +82,9 @@ app.get('/index', function(req, res) {
 });
 
 app.post('/detail', function(req, res) {
+    var r = getIDAndQuery(req);
+    var id = r.id,
+        q = r.q;
     var year = req.body.year;
     var type = req.body.type;
     var byear = parseInt(year) - 1;
@@ -86,10 +99,10 @@ app.post('/detail', function(req, res) {
     // console.log(byear, eyear);
     var promises = [];
 
-    promises.push(query.getStudentListAll(req.cookie.id, byear, eyear));
-    promises.push(query.getProbatedStudentList(req.cookie.id, byear, eyear));
-    promises.push(query.getLeavingStudentList(req.cookie.id, byear, eyear));
-    promises.push(query.getExchangeStudentList(req.cookie.id, byear, eyear));
+    promises.push(q.getStudentListAll(id, byear, eyear));
+    promises.push(q.getProbatedStudentList(id, byear, eyear));
+    promises.push(q.getLeavingStudentList(id, byear, eyear));
+    promises.push(q.getExchangeStudentList(id, byear, eyear));
     Promise.all(promises).then(result => {
         switch (type) {
             case 'normal':
@@ -196,6 +209,15 @@ app.post('/requiredCourseList', function(req, res) {
     });
 });
 
+app.post('/getAllSubjectInMajor', function(req, res) {
+    var tid = req.cookie.id;
+    var p = query.getAllSubjectInMajor(tid);
+    p.then(result => {
+        res.send(result);
+    });
+});
+
+
 app.get('/whoami', function(req, res) {
     console.log('whoami');
     console.log('using as ' + req.cookie.id);
@@ -213,7 +235,8 @@ app.get('/whoami', function(req, res) {
                     whoami: 'unknown',
                 });
             } else {
-                if (result.manage_mid !== '') {
+                console.log(result[0]);
+                if (result[0].mid === null) {
                     req.cookie.role = 'Instructor';
                     res.send({
                         whoami: 'Instructor',
@@ -221,7 +244,7 @@ app.get('/whoami', function(req, res) {
                     });
                 } else {
                     req.cookie.role = 'Manager';
-                    req.cookie.mid = result.manage_mid;
+                    req.cookie.mid = result[0].mid;
                     res.send({
                         whoami: 'Manager',
                         id: req.cookie.id,
@@ -237,6 +260,20 @@ app.get('/whoami', function(req, res) {
         // });
     }
 });
+
+function getIDAndQuery(req) {
+    var id, q;
+    if (req.cookie.role == 'Manager') {
+        id = req.cookie.mid;
+        q = mQuery;
+        console.log('index ' + id);
+    } else {
+        q = query;
+        id = req.cookie.id;
+    }
+    console.log(req.cookie.role);
+    return { id: id, q: q };
+}
 
 app.listen(3000, function() {
     console.log('app listening on port 3000!')

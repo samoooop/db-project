@@ -7,7 +7,7 @@ from  student s left join got_reward g on s.sid = g.studentid,take_leave tl,
 					where sem_consist_course.status = 'P'
 					group by student.sid) AS Grade
 where 
-	s.sid = tl.l_sid and tl.until > DATE_ADD(current_date(), INTERVAL 541 year) and tl.since < DATE_ADD(current_date(), INTERVAL 541 year) and tl.leave_type = 'Exchange'
+	s.sid = tl.l_sid and tl.until > DATE_ADD(current_date(), INTERVAL 541 year) and tl.since < DATE_ADD(current_date(), INTERVAL 541 year) and s.sid = Grade.Psid and tl.leave_type = 'Exchange'
     and s.entry_year >= ? and s.entry_year <= ?
     and s.mid = ?
 group by s.sid
