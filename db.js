@@ -36,7 +36,7 @@ app.all('/auth', function(req, res) {
     res.redirect('/login.html');
 });
 
-app.use(express.static("."));
+app.use(express.static("./public"));
 
 app.all('/logout', function(req, res) {
     req.cookie = {};
