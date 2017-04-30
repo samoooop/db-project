@@ -8,7 +8,7 @@ from (student s left join got_reward g on s.sid = g.studentid) left join major o
 					group by student.sid) AS Grade	
 where
 		s.sid = Grade.Psid
-        and s.sid = '5630211421'
+        and s.sid = ?
 group by sid
 ;
 
