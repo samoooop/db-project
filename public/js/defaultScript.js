@@ -8,7 +8,7 @@ function getRole() {
         } else if (res.whoami == 'Instructor') {
             $('#loginRole').html('อาจารย์');
             $('#loginID').html(res.id);
-            $('#sideMenuSubject').hide();
+            // $('#sideMenuSubject').hide();
         } else {
             window.location.replace("/login.html");
         }

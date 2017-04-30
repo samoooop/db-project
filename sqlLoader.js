@@ -16,4 +16,6 @@ exports.queryString = {
     getStudentEnrolledCourse: fs.readFileSync('sql/GetStudentEnrolledCourse.sql', 'utf8'),
     isATeacher: fs.readFileSync('sql/IsATeacher.sql', 'utf8'),
     getStudentRewardList: fs.readFileSync('sql/GetStudentRewardList.sql', 'utf8'),
+    getRequireNotRegist: fs.readFileSync('sql/GetRequireNotRegist.sql', 'utf8'),
+    getRequireRegistOutOfTime: fs.readFileSync('sql/GetRequireRegistOutOfTime.sql', 'utf8'),
 }

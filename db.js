@@ -83,7 +83,7 @@ app.post('/detail', function(req, res) {
         byear = 999;
         eyear = 4;
     }
-    console.log(byear, eyear);
+    // console.log(byear, eyear);
     var promises = [];
 
     promises.push(query.getStudentListAll(req.cookie.id, byear, eyear));
@@ -156,8 +156,39 @@ app.post('/studentEnrolledCourse', function(req, res) {
 
 app.post('/studentRewardList', function(req, res) {
     var tid = req.cookie.id;
+    var year = req.body.year;
+    var type = req.body.type;
+    var byear = parseInt(year) - 1;
+    var eyear = parseInt(year) - 1;
+    if (byear < 0) {
+        byear = 999;
+        eyear = -999;
+    } else if (byear >= 4) {
+        byear = 999;
+        eyear = 4;
+    }
 
-    var p = query.getStudentRewardList(tid);
+    var p = query.getStudentRewardList(byear, eyear, tid);
+    p.then(result => {
+        // console.log(tid);
+        // console.log('reward' + result);
+        res.send(result);
+    });
+});
+
+app.post('/reqOutOfTimeCourseList', function(req, res) {
+    var sid = req.body.sid;
+    var p = query.getRequireRegistOutOfTime(sid);
+    p.then(result => {
+        // console.log(tid);
+        // console.log('reward' + result);
+        res.send(result);
+    });
+});
+
+app.post('/requiredCourseList', function(req, res) {
+    var sid = req.body.sid;
+    var p = query.getRequireNotRegist(sid);
     p.then(result => {
         // console.log(tid);
         // console.log('reward' + result);

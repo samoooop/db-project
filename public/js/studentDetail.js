@@ -31,7 +31,7 @@ $.ajax({
 });
 
 function editActs(res) {
-    console.log(res);
+    // console.log(res);
     data = res;
     var t = $('#activityTable').DataTable();
     for (var i = 0; i < data.length; i++) {
@@ -53,17 +53,68 @@ $.ajax({
 });
 
 function editCourses(res) {
-    console.log(res);
+    // console.log(res);
     data = res;
     var t = $('#courseTable').DataTable();
+    for (var i = 0; i < data.length; i++) {
+        var course = data[i];
+        // console.log(course.cid);
+        var row = t.row.add([
+            course.cid,
+            course.courseName,
+            course.grade,
+            course.term,
+        ]).draw(false);
+    }
+}
+
+$.ajax({
+    type: "POST",
+    url: '/reqOutOfTimeCourseList',
+    data: {
+        sid: sid,
+    },
+    success: editOutOfTimeCourses,
+});
+
+function editOutOfTimeCourses(res) {
+    console.log('out of time regist');
+    console.log(res);
+    data = res;
+    var t = $('#regOutOfTimeCourseTable').DataTable();
+    // console.log(res);
     for (var i = 0; i < data.length; i++) {
         var course = data[i];
         console.log(course.cid);
         var row = t.row.add([
             course.cid,
             course.courseName,
-            course.grade,
-            course.term,
+            course.RequireTerm,
+        ]).draw(false);
+    }
+}
+
+$.ajax({
+    type: "POST",
+    url: '/reqOutOfTimeCourseList',
+    data: {
+        sid: sid,
+    },
+    success: reqNotRegistCourses,
+});
+
+function reqNotRegistCourses(res) {
+    console.log('req not regist');
+    console.log(res);
+    data = res;
+    var t = $('#requiredCourseTable').DataTable();
+    // console.log(res);
+    for (var i = 0; i < data.length; i++) {
+        var course = data[i];
+        console.log(course.cid);
+        var row = t.row.add([
+            course.cid,
+            course.courseName,
         ]).draw(false);
     }
 }

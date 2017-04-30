@@ -170,17 +170,43 @@ exports.getStudentEnrolledCourse = function(sid) {
     });
 }
 
-exports.getStudentRewardList = function(tid) {
+exports.getStudentRewardList = function(byear, eyear, tid) {
     return new Promise(function(resolve, reject) {
         // console.log('query by ' + ID);
         // console.log(q.queryString.getProbatedStudentList);
-        pool.query(q.queryString.getStudentRewardList, [tid], function(err, result, field) {
+        pool.query(q.queryString.getStudentRewardList, [byear, eyear, tid], function(err, result, field) {
             // console.log(result);   
             if (err) return reject(err);
             return resolve(result);
         });
     });
 }
+
+exports.getRequireNotRegist = function(sid) {
+    return new Promise(function(resolve, reject) {
+        // console.log('query by ' + ID);
+        // console.log(q.queryString.getProbatedStudentList);
+        pool.query(q.queryString.getRequireNotRegist, [sid, sid], function(err, result, field) {
+            // console.log(result);   
+            if (err) return reject(err);
+            return resolve(result);
+        });
+    });
+}
+
+
+exports.getRequireRegistOutOfTime = function(sid) {
+    return new Promise(function(resolve, reject) {
+        // console.log('query by ' + ID);
+        // console.log(q.queryString.getProbatedStudentList);
+        pool.query(q.queryString.getRequireRegistOutOfTime, [sid, sid, sid], function(err, result, field) {
+            // console.log(result);   
+            if (err) return reject(err);
+            return resolve(result);
+        });
+    });
+}
+
 
 exports.isATeacher = function(tid) {
     return new Promise(function(resolve, reject) {
