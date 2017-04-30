@@ -20,3 +20,5 @@ function addSubject(res) {
         ]).draw(false);
     }
 }
+
+$('#sideMenuSubject').addClass('active');

@@ -168,6 +168,10 @@ app.post('/studentEnrolledCourse', function(req, res) {
 });
 
 app.post('/studentRewardList', function(req, res) {
+    var r = getIDAndQuery(req);
+    var id = r.id,
+        q = r.q;
+
     var tid = req.cookie.id;
     var year = req.body.year;
     var type = req.body.type;
@@ -181,10 +185,11 @@ app.post('/studentRewardList', function(req, res) {
         eyear = 4;
     }
 
-    var p = query.getStudentRewardList(byear, eyear, tid);
+    var p = q.getStudentRewardList(byear, eyear, id);
     p.then(result => {
         // console.log(tid);
-        // console.log('reward' + result);
+        console.log('reward ' + id, byear, eyear);
+        console.log(result);
         res.send(result);
     });
 });
@@ -210,8 +215,10 @@ app.post('/requiredCourseList', function(req, res) {
 });
 
 app.post('/getAllSubjectInMajor', function(req, res) {
-    var tid = req.cookie.id;
-    var p = query.getAllSubjectInMajor(tid);
+    var r = getIDAndQuery(req);
+    var id = r.id,
+        q = r.q;
+    var p = q.getAllSubjectInMajor(id);
     p.then(result => {
         res.send(result);
     });

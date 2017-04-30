@@ -1,7 +1,15 @@
+var year = getUrlParameter('year');
+if (year === undefined) year = 0;
+var type = getUrlParameter('type');
+activeSideMenu(year);
+
 $.ajax({
     type: "POST",
     url: '/studentRewardList',
-    data: {},
+    data: {
+        year: year,
+        type: type,
+    },
     success: addRewardToTable,
 });
 
@@ -19,4 +27,12 @@ function addRewardToTable(res) {
             r.date,
         ]).draw(false);
     }
+}
+
+function activeSideMenu(v) {
+    $("#rewardSideMenu").addClass("active");
+    for (var i = 0; i <= 5; i++) {
+        $("#rewardSideMenn" + i).removeClass("active");
+    }
+    $("#rewardSideMenu" + v).addClass("active");
 }

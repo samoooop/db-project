@@ -175,7 +175,7 @@ exports.getStudentRewardList = function(byear, eyear, tid) {
     return new Promise(function(resolve, reject) {
         // console.log('query by ' + ID);
         // console.log(q.queryString.getProbatedStudentList);
-        pool.query(queryString.getStudentRewardList, [byear, eyear, tid], function(err, result, field) {
+        pool.query(queryString.getStudentRewardList, [year - byear, year - eyear, tid], function(err, result, field) {
             // console.log(result);   
             if (err) return reject(err);
             return resolve(result);
