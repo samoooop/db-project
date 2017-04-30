@@ -9,6 +9,6 @@ from  student s left join got_reward g on s.sid = g.studentid,take_leave tl,
 where 
 	s.sid = tl.l_sid and tl.until > DATE_ADD(current_date(), INTERVAL 541 year) and tl.since < DATE_ADD(current_date(), INTERVAL 541 year) and tl.leave_type = 'Exchange'
     and s.entry_year >= ? and s.entry_year <= ?
-    and s.tid = ?
+    and s.mid = ?
 group by s.sid
 ;

@@ -8,6 +8,6 @@ from (student s left join got_reward g on s.sid = g.studentid) left join
 					group by student.sid) AS Grade	 on s.sid = Grade.Psid
 where
 		(Grade.GPAX >= 2 or Grade.GPAX is null)  and s.entry_year >= ? and s.entry_year <= ?
-		and s.tid = ?
+		and s.mid = ?
 group by sid
 ;

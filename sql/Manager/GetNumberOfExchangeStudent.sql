@@ -4,6 +4,6 @@ where s.sid = tl.l_sid
 	and tl.until > DATE_ADD(current_date(), INTERVAL 543 year) 
 	and tl.since < DATE_ADD(current_date(), INTERVAL 543 year)
     and tl.leave_type = "Exchange"
-    and s.tid = ?
+    and s.mid = ?
 group by s.entry_year
 ;
