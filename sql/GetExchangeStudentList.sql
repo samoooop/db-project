@@ -1,4 +1,4 @@
-select s.sid ,s.first_name, s.last_name, Grade.GPAX as gpax , count(g.rewardid) as rewardAmount ,s.entry_year as enYear,s.tid as tid,s.mid as mid
+select s.sid ,s.first_name, s.last_name, Grade.GPAX as gpax , count(g.rewardid) as rewardAmount, s.entry_year as enYear,s.tid as tid,s.mid as mid
 from  student s left join got_reward g on s.sid = g.studentid,take_leave tl,
 (select sum((sem_consist_course.grade*course.credit))/sum(course.credit) AS GPAX, student.sid AS Psid ,sem_consist_course.status as status
 					from ((student inner join semester on student.sid = semester.sem_sid) inner join sem_consist_course 
@@ -7,7 +7,7 @@ from  student s left join got_reward g on s.sid = g.studentid,take_leave tl,
 					where sem_consist_course.status = 'P'
 					group by student.sid) AS Grade
 where 
-	s.sid = tl.l_sid and tl.until > DATE_ADD(current_date(), INTERVAL 541 year) and tl.since < DATE_ADD(current_date(), INTERVAL 541 year) and tl.leave_type = 'Exchange'
+	s.sid = tl.l_sid and tl.until > DATE_ADD(current_date(), INTERVAL 543 year) and tl.since < DATE_ADD(current_date(), INTERVAL 543 year) and s.sid = Grade.Psid and tl.leave_type = 'Exchange'
     and s.entry_year >= ? and s.entry_year <= ?
     and s.tid = ?
 group by s.sid

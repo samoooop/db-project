@@ -67,7 +67,7 @@ function addDataToTable(res) {
                 var x = sid;
                 return function() {
                     window.location.replace("/studentDetail.html?id=" + x);
-                    console.log(x);
+                    // console.log(x);
                 }
             }
             rows[totalRows].onclick = gen(student.sid);
