@@ -42,3 +42,28 @@ function editActs(res) {
         ]).draw(false);
     }
 }
+
+$.ajax({
+    type: "POST",
+    url: '/studentEnrolledCourse',
+    data: {
+        sid: sid,
+    },
+    success: editCourses,
+});
+
+function editCourses(res) {
+    console.log(res);
+    data = res;
+    var t = $('#courseTable').DataTable();
+    for (var i = 0; i < data.length; i++) {
+        var course = data[i];
+        console.log(course.cid);
+        var row = t.row.add([
+            course.cid,
+            course.courseName,
+            course.grade,
+            course.term,
+        ]).draw(false);
+    }
+}

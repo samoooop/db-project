@@ -158,6 +158,18 @@ exports.getStudentActivity = function(sid) {
     });
 }
 
+exports.getStudentEnrolledCourse = function(sid) {
+    return new Promise(function(resolve, reject) {
+        // console.log('query by ' + ID);
+        // console.log(q.queryString.getProbatedStudentList);
+        pool.query(q.queryString.getStudentEnrolledCourse, [sid], function(err, result, field) {
+            // console.log(result);   
+            if (err) return reject(err);
+            return resolve(result);
+        });
+    });
+}
+
 exports.isATeacher = function(tid) {
     return new Promise(function(resolve, reject) {
         // console.log('query by ' + ID);

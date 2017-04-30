@@ -145,6 +145,15 @@ app.post('/studentActivity', function(req, res) {
     });
 });
 
+app.post('/studentEnrolledCourse', function(req, res) {
+    var sid = req.body.sid;
+
+    var p = query.getStudentEnrolledCourse(sid);
+    p.then(result => {
+        res.send(result);
+    });
+});
+
 app.get('/whoami', function(req, res) {
     console.log('whoami');
     console.log('using as ' + req.cookie.id);
