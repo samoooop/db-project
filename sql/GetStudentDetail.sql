@@ -7,7 +7,8 @@ from (student s left join got_reward g on s.sid = g.studentid) left join major o
                                 where sem_consist_course.status = 'P'
 					group by student.sid) AS Grade	
 where
-		Grade.GPAX >= 2 and s.sid = Grade.Psid
-        and s.sid = ?
+		s.sid = Grade.Psid
+        and s.sid = '5630211421'
 group by sid
 ;
+

@@ -1,8 +1,8 @@
-select count(student.sid) as result,student.entry_year as year
-from student,take_leave
-where student.sid = take_leave.l_sid 
-        and take_leave.until > current_date() 
-        and take_leave.since < current_date()
-        and student.tid = ?
-group by student.entry_year
+select count(s.sid) as result,s.entry_year as year
+from student s,take_leave tl
+where s.sid = tl.l_sid 
+        and tl.until > DATE_ADD(current_date(), INTERVAL 543 year) 
+        and tl.since < DATE_ADD(current_date(), INTERVAL 543 year)
+        and s.tid = ?
+group by s.entry_year
 ;
