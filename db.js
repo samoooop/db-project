@@ -154,6 +154,17 @@ app.post('/studentEnrolledCourse', function(req, res) {
     });
 });
 
+app.post('/studentRewardList', function(req, res) {
+    var tid = req.cookie.id;
+
+    var p = query.getStudentRewardList(tid);
+    p.then(result => {
+        // console.log(tid);
+        // console.log('reward' + result);
+        res.send(result);
+    });
+});
+
 app.get('/whoami', function(req, res) {
     console.log('whoami');
     console.log('using as ' + req.cookie.id);
