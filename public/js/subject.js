@@ -3,13 +3,16 @@ $.ajax({
     url: "/getAllSubjectInMajor",
     data: {},
     success: addSubject,
+    error: function() {
+        console.log("shit")
+    },
 });
 
 function addSubject(res) {
-    console.log('req not regist');
+    // console.log('req not regist');
     console.log(res);
     data = res;
-    var t = $('#requiredCourseTable').DataTable();
+    var t = $('#subjectTable').DataTable();
     // console.log(res);
     for (var i = 0; i < data.length; i++) {
         var course = data[i];
@@ -17,6 +20,10 @@ function addSubject(res) {
         var row = t.row.add([
             course.cid,
             course.courseName,
+            course.managedTeacher,
+            course.avgGrade,
+            course.F,
+            course.W,
         ]).draw(false);
     }
 }

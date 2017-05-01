@@ -208,11 +208,11 @@ exports.getRequireRegistOutOfTime = function(sid) {
     });
 }
 
-exports.getAllSubjectInMajor = function(tid) {
+exports.getAllSubjectInMajor = function(mid) {
     return new Promise(function(resolve, reject) {
-        // console.log('query by ' + ID);
+        console.log('query subject in major mode by ' + mid);
         // console.log(q.queryString.getProbatedStudentList);
-        pool.query(queryString.getAllSubjectInMajor, [tid], function(err, result, field) {
+        pool.query(queryString.getAllSubjectInMajor, [mid], function(err, result, field) {
             // console.log(result);   
             if (err) return reject(err);
             return resolve(result);
