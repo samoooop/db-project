@@ -112,7 +112,7 @@ app.post('/detail', function(req, res) {
                 result[2] = [];
                 result[3] = [];
                 break;
-            case 'exchage':
+            case 'exchange':
                 result[0] = [];
                 result[1] = [];
                 result[2] = [];
