@@ -6,8 +6,9 @@ from (student s left join got_reward g on s.sid = g.studentid) left join
 								left join course on sem_consist_course.course_id = course.cid
                                 where sem_consist_course.status = 'P'
 					group by student.sid) AS Grade	 on s.sid = Grade.Psid
+                    left join take_leave tl on s.sid = tl.l_sid
 where
 		(Grade.GPAX >= 2 or Grade.GPAX is null)  and s.entry_year >= ? and s.entry_year <= ?
-		and s.tid = ?
-group by sid
+		and s.tid = ? and (tl.until < DATE_ADD(current_date(), INTERVAL 543 year) or tl.since > DATE_ADD(current_date(), INTERVAL 543 year) or tl.leave_type is null)
+group by sid 
 ;
