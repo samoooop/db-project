@@ -51,33 +51,35 @@ app.all('/logout', function(req, res) {
 });
 
 app.get('/index', function(req, res) {
-    var r = getIDAndQuery(req);
-    var id = r.id,
-        q = r.q;
     // console.log("requested " + req.cookies);
     // var connection = mysql.createConnection(dbconfig);
     // connection.connect();
     // console.log('index');
-    promises = [];
-    promises.push(q.getNumberOfStudent(id));
-    promises.push(q.getNumberOfProbatedStudent(id));
-    promises.push(q.getNumberOfExchangeStudent(id))
-    promises.push(q.getNumberOfLeavingStudent(id));
-    promises.push(q.getAverageGrade(id));
-    promises.push(q.getNumberOfReward(id));
-    Promise.all(promises).then(result => {
-        var response = {
-                // [1st,2nd,3rd,4th,other]
-                numberOfStudent: result[0],
-                numberOfFineStudent: result[0].map((x, idx) => x - result[1][idx] - result[3][idx]),
-                numberOfProbatedStudent: result[1],
-                numberOfExchangeStudent: result[2],
-                numberOfLeavingStudent: result[3],
-                averageGrade: result[4],
-                numberOfReward: result[5],
-            }
-            // console.log(response);
-        res.send(response);
+    getRole(req, () => {
+        var r = getIDAndQuery(req);
+        var id = r.id,
+            q = r.q;
+        promises = [];
+        promises.push(q.getNumberOfStudent(id));
+        promises.push(q.getNumberOfProbatedStudent(id));
+        promises.push(q.getNumberOfExchangeStudent(id))
+        promises.push(q.getNumberOfLeavingStudent(id));
+        promises.push(q.getAverageGrade(id));
+        promises.push(q.getNumberOfReward(id));
+        Promise.all(promises).then(result => {
+            var response = {
+                    // [1st,2nd,3rd,4th,other]
+                    numberOfStudent: result[0],
+                    numberOfFineStudent: result[0].map((x, idx) => x - result[1][idx] - result[3][idx]),
+                    numberOfProbatedStudent: result[1],
+                    numberOfExchangeStudent: result[2],
+                    numberOfLeavingStudent: result[3],
+                    averageGrade: result[4],
+                    numberOfReward: result[5],
+                }
+                // console.log(response);
+            res.send(response);
+        });
     });
 });
 
@@ -245,6 +247,7 @@ app.get('/whoami', function(req, res) {
                 console.log(result[0]);
                 if (result[0].mid === null) {
                     req.cookie.role = 'Instructor';
+                    req.cookie.mid = null;
                     res.send({
                         whoami: 'Instructor',
                         id: req.cookie.id,
@@ -270,14 +273,15 @@ app.get('/whoami', function(req, res) {
 
 function getIDAndQuery(req) {
     var id, q;
+    // getRole(req);
     if (req.cookie.role == 'Manager') {
         id = req.cookie.mid;
         q = mQuery;
-        console.log('index ' + id);
     } else {
         q = query;
         id = req.cookie.id;
     }
+    console.log('index ' + id);
     console.log(req.cookie.role);
     return { id: id, q: q };
 }
@@ -285,3 +289,33 @@ function getIDAndQuery(req) {
 app.listen(3000, function() {
     console.log('app listening on port 3000!')
 });
+
+function getRole(req, cb) {
+    var p = query.isATeacher(req.cookie.id);
+    p.then(result => {
+        // console.log('whoami ' + result[0].manage_mid);
+        if (result.length == 0) {
+            cb({
+                whoami: 'unknown',
+            });
+        } else {
+            console.log('lala' + result[0]);
+            if (result[0].mid === null) {
+                req.cookie.role = 'Instructor';
+                req.cookie.mid = null;
+                cb({
+                    whoami: 'Instructor',
+                    id: req.cookie.id,
+                });
+            } else {
+                req.cookie.role = 'Manager';
+                req.cookie.mid = result[0].mid;
+                cb({
+                    whoami: 'Manager',
+                    id: req.cookie.id,
+                    mid: req.cookie.mid,
+                });
+            }
+        }
+    });
+}
